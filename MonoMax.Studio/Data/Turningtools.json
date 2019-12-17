@@ -1,0 +1,52 @@
+[
+    {
+        "$type" : "Node",
+        "Key" : "PCLNL1616K12",
+        "ImageSetKey" : "pclnl",
+        "Ids" : {
+            "iso" : "PCLNL1616K12"
+        },
+        "Tags" : [
+            "Shank",
+            "16x16"
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "PCLNR1616K12",
+        "ImageSetKey" : "pclnr",
+        "Ids" : {
+            "iso" : "PCLNR1616K12"
+        },
+        "Tags" : [
+            "Shank",
+            "16x16"
+        ]
+    },
+
+
+    {
+        "$type" : "Node",
+        "Key" : "PCLNL2020K12",
+        "ImageSetKey" : "pclnl",
+        "Ids" : {
+            "iso" : "PCLNL2020K12"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "PCLNR2020K12",
+        "ImageSetKey" : "pclnr",
+        "Ids" : {
+            "iso" : "PCLNL2020K12"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    }
+]

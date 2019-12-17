@@ -1,0 +1,59 @@
+[
+    {
+        "$type" : "Node",
+        "Key" : "Turning spindle 45 KK5",
+        "Tags" : [
+            "Turning",
+            "Spindle",
+            "ISO702-5",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "ISO702-5",
+                    "Fixture"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 1
+            }
+        ]
+        
+    },
+    {
+        "$type" : "Node",
+        "Key" : "TopPlus mini 42",
+        "ImageSetkey" : "hainbuch_topplus_mini",
+        "Tags" : [
+            "Fixture",
+            "Deadend style",
+            "ISO702-5"
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "TopPlus mini 52",
+        "ImageSetkey" : "hainbuch_topplus_mini",
+        "Tags" : [
+            "Fixture",
+            "Deadend style",
+            "ISO702-5"
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "TopPlus mini 65",
+        "ImageSetkey" : "hainbuch_topplus_mini",
+        "Tags" : [
+            "Fixture",
+            "Deadend style",
+            "ISO702-6"
+        ]
+    }
+]

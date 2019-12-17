@@ -1,0 +1,56 @@
+[
+    {
+        "$type" : "Node",
+        "Key" : "Radial VDI25 turret",
+        "ImageSetKey" : "turret_radial_vdi",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI25",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI25"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 12
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Axial VDI25 turret",
+        "ImageSetKey" : "turret_axial_vdi",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI25",
+            "Axial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI25"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 12
+            }
+        ]
+    }
+]

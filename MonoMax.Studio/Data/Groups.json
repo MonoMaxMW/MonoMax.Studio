@@ -1,0 +1,32 @@
+[
+    {
+        "$type" : "Node",
+        "Key" : "Spindles",
+        "Tags" : [
+            "group"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "spindle"
+                ]
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Channels",
+        "Tags" : [
+            "group"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "channel"
+                ]
+            }
+        ]
+    }
+]

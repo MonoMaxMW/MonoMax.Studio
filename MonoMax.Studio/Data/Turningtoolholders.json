@@ -1,0 +1,131 @@
+
+[
+    {
+        "$type" : "Node",
+        "Data" : {
+            "en" : { "Header" : "O.D. toolholder, 1 x 16x16, VDI25" },
+            "de" : { "Header" :"A.D. Werkzeughalter, 1 x 16x16, VDI25" }
+        },
+        "Tags" : [
+            "Toolholder",
+            "VDI25",
+            "Static"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Shank",
+                    "16x16"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 1
+            }
+        ]
+    },
+    {
+       "$type" : "Node",
+       "Data" : {
+           "en" : { "Header" : "O.D. toolholder, 2 x 16x16, VDI25" },
+           "de" : { "Header" :"A.D. Werkzeughalter, 2 x 16x16, VDI25" }
+       },
+       "Tags" : [
+           "Toolholder",
+           "VDI25",
+           "Static"
+       ],
+       "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Shank",
+                    "16x16" 
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 2
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageSetKey" : "od_shank_toolholder_4", 
+        "Data" : {
+            "en" : { "Header" : "O.D. toolholder, 4 x 16x16, VDI25" },
+            "de" : { "Header" :"A.D. Werkzeughalter, 4 x 16x16, VDI25" }
+        },
+        "Tags" : [
+            "Toolholder",
+            "VDI25",
+            "Static"
+        ],
+        "Rules" : [
+            { 
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Shank",
+                    "16x16"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 4
+            }
+        ]
+    },
+
+
+
+
+
+
+
+    {
+        "$type" : "Node",
+        "Data" : {
+            "en" : { "Header" : "O.D. toolholder, 1 x 20x20, VDI30" },
+            "de" : { "Header" :"A.D. Werkzeughalter, 1 x 20x20, VDI30" }
+        },
+        "Tags" : [
+            "Toolholder",
+            "VDI30",
+            "Static"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Shank",
+                    "20x20" 
+                ]
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Data" : {
+            "en" : { "Header" : "O.D. toolholder, 2 x 20x20, VDI30" },
+            "de" : { "Header" :"A.D. Werkzeughalter, 2 x 20x20, VDI30" }
+        },
+        "Tags" : [
+            "Toolholder",
+            "VDI30",
+            "Static"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Shank",
+                    "20x20" 
+                ]
+            }
+        ]
+    }
+]
