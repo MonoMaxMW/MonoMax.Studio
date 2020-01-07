@@ -48,5 +48,17 @@
             "Shank",
             "20x20"
         ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Joe Drietz!!",
+        "ImageSetKey" : "pclnr",
+        "Ids" : {
+            "iso" : "PCLNL2020K12"
+        },
+        "Tags" : [
+            "Fuck you!",
+            "20x20"
+        ]
     }
 ]
