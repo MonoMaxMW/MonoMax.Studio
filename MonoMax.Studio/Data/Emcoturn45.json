@@ -1,7 +1,7 @@
 [
     {
         "$type" : "Node",
-        "Key" : "EMCOTURN E45 SMY - SIEMENS",
+        "Key" : "EMCOTURN E45 - SIEMENS",
         "Tags" : [
             "Machine",
             "Lathe",
@@ -26,7 +26,37 @@
             }
         ],
         "Ids" : {
-            "emco" : "S4ES21"
+            "emco" : "S4ES01"
+        }
+    },
+    {
+        "$type" : "Node",
+        "Key" : "EMCOTURN E45 M - SIEMENS",
+        "Tags" : [
+            "Machine",
+            "Lathe",
+            "Siemens",
+            "Subspindle",
+            "828d",
+            "Live tooling"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Machine component"
+                ]
+            },
+            {
+                "$type" : "IllegalTagsRule",
+                "Tags" : [
+                    "Fanuc",
+                    "Machine"
+                ]
+            }
+        ],
+        "Ids" : {
+            "emco" : "S4ES02"
         }
     }
 ]

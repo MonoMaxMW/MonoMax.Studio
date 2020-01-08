@@ -22,7 +22,8 @@ namespace MonoMax.Studio.ViewModels
         private List<string> _availableTags;
         private List<string> _selectedTags;
         private IReadOnlyList<INode> _items;
-        
+        private IReadOnlyDictionary<string, string> _componentDetails;
+
         private string _lastClickedTag;
 
         public ImageSource Icon { get; }
@@ -122,6 +123,7 @@ namespace MonoMax.Studio.ViewModels
 
         internal void Activate()
         {
+            _componentDetails = GetComponentDetails();
             _items = DeserializeNodes();
             _availableTags = new List<string>(GetAvailableNodes(_items));
             _selectedTags = new List<string>();
@@ -133,6 +135,67 @@ namespace MonoMax.Studio.ViewModels
             AvailableTags.SortDescriptions.Add(new SortDescription());
             SelectedTags.SortDescriptions.Add(new SortDescription());
 
+        }
+
+        private IReadOnlyDictionary<string, string> GetComponentDetails()
+        {
+            var xlFile = Path.Combine(new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName, "Data", "Component_data.xlsx");
+
+            if (!File.Exists(xlFile))
+                return null;
+
+
+            var dict = new Dictionary<string, string>();
+
+            using (var pck = new OfficeOpenXml.ExcelPackage(new FileInfo(xlFile)))
+            {
+                var ws = default(OfficeOpenXml.ExcelWorksheet);
+                var tbl = default(OfficeOpenXml.Table.ExcelTable);
+
+                for (int i = 1; i <= pck.Workbook.Worksheets.Count; i++)
+                {
+                    ws = pck.Workbook.Worksheets[i];
+                    tbl = ws.Tables.First();
+
+                    var start = tbl.Address.Start;
+                    var end = tbl.Address.End;
+                    var column_id = start.Column;
+                    var column_header = column_id + 1;
+                    var column_description = column_id + 2;
+
+                    var id = string.Empty;
+                    var header = string.Empty;
+                    var description = string.Empty;
+
+                    for (int r = start.Row + 1; r <= end.Row; r++)
+                    {
+                        id = header = description = string.Empty;
+
+                        if(ws.Cells[r,column_id].Value != null)
+                        {
+
+
+                            id = ws.Cells[r, column_id].GetValue<string>();
+                            header = ws.Cells[r, column_header].GetValue<string>();
+                            description = ws.Cells[r, column_description].GetValue<string>();
+
+                            var key = ws.Name + "_" + id;
+
+                            if (!dict.ContainsKey(key))
+                                dict.Add(key, description);
+                        }
+
+                    }
+
+
+                }
+
+
+
+            }
+
+
+            return dict;
         }
 
         private List<INode> DeserializeNodes()
@@ -160,6 +223,27 @@ namespace MonoMax.Studio.ViewModels
 
                 if (!string.IsNullOrEmpty(DefaultPictureFile))
                     items.ForEach(x => x.ImageSetKey = DefaultPictureFile);
+
+                foreach (var item in items)
+                {
+                    item.Init();
+                    if(item.Ids != null)
+                    {
+                        foreach (var id in item.Ids)
+                        {
+                            var tmp = $"{id.Key}_{id.Value}";
+                            if (_componentDetails.ContainsKey(tmp))
+                            {
+                                item.AddText("en", _componentDetails[tmp]);
+                            }
+
+
+
+                        }
+
+
+                    }
+                }
 
                 items.ForEach(x => x.Init());
                 allItems.AddRange(items);

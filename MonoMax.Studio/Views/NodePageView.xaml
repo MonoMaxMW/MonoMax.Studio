@@ -185,15 +185,12 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
-                        <Image Height="32" Width="32" Source="{Binding Images[32], FallbackValue={StaticResource Missing_img_32}}" />
+                        <Image Height="32" Width="32" VerticalAlignment="Top" Source="{Binding Images[32], FallbackValue={StaticResource Missing_img_32}}" />
                         <Border Grid.Column="1" Margin="3,0,0,0">
                             <Grid>
                                 <TextBlock Text="{Binding Header}" VerticalAlignment="Center" DockPanel.Dock="Top"
                                        Foreground="{StaticResource accent_colorbrush_1}"/>
-                                <TextBox Visibility="{Binding HasText, Converter={StaticResource BooleanToVisibilityConverter}}" 
-                                     Text="{Binding Text, Mode=OneWay}" IsReadOnly="True" 
-                                     BorderThickness="0" Background="Transparent"
-                                     VerticalAlignment="Center"/>
+                                 
                             </Grid>
                         </Border>
                     </Grid>

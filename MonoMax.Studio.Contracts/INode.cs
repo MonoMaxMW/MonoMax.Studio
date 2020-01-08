@@ -9,13 +9,6 @@ using System.Threading.Tasks;
 
 namespace MonoMax.Studio.Contracts
 {
-    [Serializable]
-    public struct DataEntry
-    {
-        public string Header { get; set; }
-        public string Text { get; set; }
-    }
-
     public interface INode : IDropTarget, ICloneable
     {
         string Header { get; }
@@ -32,5 +25,6 @@ namespace MonoMax.Studio.Contracts
         bool Validate(params object[] arguments);
         void AddNode(INode node);
         void RemoveNode(INode node);
+        void AddText(string languageKey, string text);
     }
 }

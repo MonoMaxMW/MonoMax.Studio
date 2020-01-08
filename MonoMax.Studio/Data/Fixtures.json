@@ -26,6 +26,30 @@
     },
     {
         "$type" : "Node",
+        "Key" : "Pneumatic spindle",
+        "Tags" : [
+            "Turning",
+            "Spindle",
+            "Pneumatic",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Pneumatic",
+                    "Fixture"
+                ]
+            },
+            {
+                "$type" : "QuantityRule",
+                "Mode" : "Smaller",
+                "Value" : 1
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
         "Key" : "Temp spindle",
         "Tags" : [
             "Turning",

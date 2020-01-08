@@ -14,7 +14,7 @@
         TextElement.FontSize="14"
         UseLayoutRounding="True"
         RenderOptions.BitmapScalingMode="HighQuality"
-        Title="ShellView" Height="768" Width="1024">
+        Title="MonoMax.Studio" Height="768" Width="1024">
     <Window.Resources>
         <Style x:Key="TreeViewItemFocusVisual">
             <Setter Property="Control.Template">

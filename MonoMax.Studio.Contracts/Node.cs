@@ -79,7 +79,7 @@ namespace MonoMax.Studio.Contracts
             if(Data != null)
             {
                 var key = Thread.CurrentThread.GetUiLanguageKey();
-                if (Data.ContainsKey(key))
+                if (Data.ContainsKey(key) && !string.IsNullOrEmpty(Data[key].Header))
                     return Data[key].Header;
             }
 
@@ -255,6 +255,12 @@ namespace MonoMax.Studio.Contracts
             return clonedNode;
         }
 
+        public void AddText(string languageKey, string text)
+        {
+            if (Data == null)
+                Data = new Dictionary<string, DataEntry>();
 
+            Data.Add(languageKey, new DataEntry() { Text = text });
+        }
     }
 }
