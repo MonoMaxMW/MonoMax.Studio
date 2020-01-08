@@ -14,7 +14,7 @@ namespace MonoMax.Studio.Contracts
         string Header { get; }
         string Text { get; }
         string Key { get; }
-        string ImageSetKey { get; set; }
+        string ImageKey { get; set; }
         List<string> Tags { get; }
         Dictionary<string, string> Ids { get; set; }
         Dictionary<string, DataEntry> Data { get; set; }

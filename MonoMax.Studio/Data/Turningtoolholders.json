@@ -4,7 +4,7 @@
         "$type" : "Node",
         "Data" : {
             "en" : { "Header" : "O.D. toolholder, 1 x 16x16, VDI25" },
-            "de" : { "Header" :"A.D. Werkzeughalter, 1 x 16x16, VDI25" }
+            "de" : { "Header" : "A.D. Werkzeughalter, 1 x 16x16, VDI25" }
         },
         "Tags" : [
             "Toolholder",
@@ -54,7 +54,7 @@
     },
     {
         "$type" : "Node",
-        "ImageSetKey" : "od_shank_toolholder_4", 
+        "ImageKey" : "od_shank_toolholder_4", 
         "Data" : {
             "en" : { "Header" : "O.D. toolholder, 4 x 16x16, VDI25" },
             "de" : { "Header" :"A.D. Werkzeughalter, 4 x 16x16, VDI25" }

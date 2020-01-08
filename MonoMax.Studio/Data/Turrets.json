@@ -2,7 +2,7 @@
     {
         "$type" : "Node",
         "Key" : "Radial VDI25 turret",
-        "ImageSetKey" : "turret_radial_vdi",
+        "ImageKey" : "turret_radial_vdi",
         "Tags" : [
             "Turret",
             "Channel",
@@ -29,7 +29,7 @@
     {
         "$type" : "Node",
         "Key" : "Axial VDI25 turret",
-        "ImageSetKey" : "turret_axial_vdi",
+        "ImageKey" : "turret_axial_vdi",
         "Tags" : [
             "Turret",
             "Channel",

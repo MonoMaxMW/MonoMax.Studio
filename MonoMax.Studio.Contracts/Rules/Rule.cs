@@ -12,7 +12,6 @@ namespace MonoMax.Studio.Contracts.Rules
     {
         public static Type[] KnownTypes = new[]
         {
-            typeof(AttributeLookupRule),
             typeof(QuantityRule),
             typeof(ChildNodesQuantityRule),
             typeof(RequiredTagsRule),

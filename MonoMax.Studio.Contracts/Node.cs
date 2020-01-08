@@ -53,7 +53,7 @@ namespace MonoMax.Studio.Contracts
         private List<INode> _nodes = new List<INode>();
 
         public string Key { get; set; }
-        public string ImageSetKey { get; set; }
+        public string ImageKey { get; set; }
 
         public string Header => GetHeader();
         public string Text => GetText();
@@ -87,8 +87,6 @@ namespace MonoMax.Studio.Contracts
         }
 
         public INode Parent { get; private set; }
-
-        public Dictionary<string, object> Attributes { get; set; }
         public Dictionary<string, string> Ids { get; set; }
         public Dictionary<string, DataEntry> Data { get; set; }
         public Rule[] Rules { get; set; }
@@ -139,7 +137,7 @@ namespace MonoMax.Studio.Contracts
 
         public void Init()
         {
-            if (!string.IsNullOrEmpty(ImageSetKey))
+            if (!string.IsNullOrEmpty(ImageKey))
             {
                 var tmpDict = new Dictionary<int, ImageSource>();
                 var baseDir = new FileInfo(GetType().Assembly.Location).Directory.FullName;
@@ -149,7 +147,7 @@ namespace MonoMax.Studio.Contracts
                     var imgPath = Path.Combine(
                         baseDir, "Data",
                         "img",
-                        ImageSetKey + $"_{imgSize}.png");
+                        ImageKey + $"_{imgSize}.png");
 
                     if (File.Exists(imgPath))
                         tmpDict.Add(imgSize, new BitmapImage(new Uri(imgPath, UriKind.RelativeOrAbsolute)));
@@ -242,9 +240,8 @@ namespace MonoMax.Studio.Contracts
             var clonedNode = new Node()
             {
                 Key = this.Key,
-                ImageSetKey = this.ImageSetKey,
+                ImageKey = this.ImageKey,
                 Rules = this.Rules,
-                Attributes = this.Attributes,
                 Data = this.Data,
                 Tags = this.Tags,
                 Ids = this.Ids,

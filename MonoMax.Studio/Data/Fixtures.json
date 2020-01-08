@@ -76,7 +76,7 @@
     {
         "$type" : "Node",
         "Key" : "TopPlus mini 42",
-        "ImageSetkey" : "hainbuch_topplus_mini",
+        "ImageKey" : "hainbuch_topplus_mini",
         "Tags" : [
             "Fixture",
             "Deadend style",
@@ -87,7 +87,7 @@
     {
         "$type" : "Node",
         "Key" : "TopPlus mini 52",
-        "ImageSetkey" : "hainbuch_topplus_mini",
+        "ImageKey" : "hainbuch_topplus_mini",
         "Tags" : [
             "Fixture",
             "Deadend style",
@@ -98,7 +98,7 @@
     {
         "$type" : "Node",
         "Key" : "TopPlus mini 65",
-        "ImageSetkey" : "hainbuch_topplus_mini",
+        "ImageKey" : "hainbuch_topplus_mini",
         "Tags" : [
             "Fixture",
             "Deadend style",

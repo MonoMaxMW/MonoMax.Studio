@@ -2,7 +2,7 @@
     {
         "$type" : "Node",
         "Key" : "PCLNL1616K12",
-        "ImageSetKey" : "pclnl",
+        "ImageKey" : "pclnl",
         "Ids" : {
             "iso" : "PCLNL1616K12"
         },
@@ -14,7 +14,7 @@
     {
         "$type" : "Node",
         "Key" : "PCLNR1616K12",
-        "ImageSetKey" : "pclnr",
+        "ImageKey" : "pclnr",
         "Ids" : {
             "iso" : "PCLNR1616K12"
         },
@@ -28,7 +28,7 @@
     {
         "$type" : "Node",
         "Key" : "PCLNL2020K12",
-        "ImageSetKey" : "pclnl",
+        "ImageKey" : "pclnl",
         "Ids" : {
             "iso" : "PCLNL2020K12"
         },
@@ -40,7 +40,7 @@
     {
         "$type" : "Node",
         "Key" : "PCLNR2020K12",
-        "ImageSetKey" : "pclnr",
+        "ImageKey" : "pclnr",
         "Ids" : {
             "iso" : "PCLNL2020K12"
         },

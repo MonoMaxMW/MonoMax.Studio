@@ -39,7 +39,7 @@ namespace MonoMax.Studio.ViewModels
     [Export(typeof(IShell))]
     public class ShellViewModel : PropertyChangedBase, IShell
     {
-        private Node _root = new Node() { Key = "Root", IsExpanded = true, ImageSetKey = "root.svg" };
+        private Node _root = new Node() { Key = "Root", IsExpanded = true, ImageKey = "root.svg" };
         private NodePageViewModel _activeNodePage;
         private Node _selectedNode;
 
