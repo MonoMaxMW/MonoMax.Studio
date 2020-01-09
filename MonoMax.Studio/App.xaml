@@ -23,7 +23,6 @@
             <BitmapImage x:Key="img_invalid" UriSource="Assets/invalid_16.png" />
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Assets/VectorIcons.xaml" />
                 <ResourceDictionary>
                     <local:MefBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
