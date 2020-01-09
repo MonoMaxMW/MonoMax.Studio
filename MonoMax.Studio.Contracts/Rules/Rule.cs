@@ -15,7 +15,9 @@ namespace MonoMax.Studio.Contracts.Rules
             typeof(QuantityRule),
             typeof(ChildNodesQuantityRule),
             typeof(RequiredTagsRule),
-            typeof(IllegalTagsRule)
+            typeof(IllegalTagsRule),
+            typeof(MaxItemRule),
+            typeof(RangeRule)
 
         };
 

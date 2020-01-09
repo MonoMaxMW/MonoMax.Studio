@@ -18,12 +18,17 @@ namespace MonoMax.Studio.Contracts.Rules
             var source = args[0] as Node;
             var nodeToVerify = args[1] as Node;
             var isValid = true;
+            var allowedValue = Value;
 
             switch (Mode)
             {
-                case nameof(LookupMode.Smaller):
                 case nameof(LookupMode.Equals):
-                    isValid = source.NodesCount < Value;
+                    isValid = source.NodesCount < allowedValue;
+                    break;
+
+                case nameof(LookupMode.Smaller):
+                    allowedValue += 1;
+                    isValid = source.NodesCount < allowedValue;
                     break;
             }
              
@@ -31,7 +36,7 @@ namespace MonoMax.Studio.Contracts.Rules
             {
                 nodeToVerify.AddError(GetType().Name,
                     $"Maximum amount of elements reached!\n" +
-                    $"Allowed amount: {Value}");
+                    $"Allowed amount: {allowedValue}");
             }
 
             return isValid;

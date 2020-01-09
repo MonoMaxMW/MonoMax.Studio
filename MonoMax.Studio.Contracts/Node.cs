@@ -91,6 +91,7 @@ namespace MonoMax.Studio.Contracts
         public Dictionary<string, DataEntry> Data { get; set; }
         public Rule[] Rules { get; set; }
         public List<string> Tags { get; set; }
+        public List<AttributeEntry> Attributes { get; set; }
 
         public bool IsExpanded
         {

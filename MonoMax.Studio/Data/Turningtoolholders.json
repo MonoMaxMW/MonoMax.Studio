@@ -3,128 +3,77 @@
     {
         "$type" : "Node",
         "Data" : {
-            "en" : { "Header" : "O.D. toolholder, 1 x 16x16, VDI25" },
-            "de" : { "Header" : "A.D. Werkzeughalter, 1 x 16x16, VDI25" }
+            "en" : { "Header" : "O.D. toolholder" },
+            "de" : { "Header" :"A.D. Werkzeughalter" }
         },
         "Tags" : [
             "Toolholder",
-            "VDI25",
-            "Static"
+            "Static",
+            "VDI30"
         ],
         "Rules" : [
             {
                 "$type" : "RequiredTagsRule",
                 "Tags" : [
                     "Shank",
-                    "16x16"
+                    "20x20" 
                 ]
             },
-            {
-                "$type" : "QuantityRule",
-                "Mode" : "Smaller",
+            { 
+                "$type" : "MaxItemRule", 
                 "Value" : 1
             }
         ]
     },
     {
-       "$type" : "Node",
-       "Data" : {
-           "en" : { "Header" : "O.D. toolholder, 2 x 16x16, VDI25" },
-           "de" : { "Header" :"A.D. Werkzeughalter, 2 x 16x16, VDI25" }
-       },
-       "Tags" : [
-           "Toolholder",
-           "VDI25",
-           "Static"
-       ],
-       "Rules" : [
+        "$type" : "Node",
+        "ImageKey" : "od_shank_toolholder_2",
+        "Data" : {
+            "en" : { "Header" : "O.D. toolholder x 2" },
+            "de" : { "Header" :"A.D. Werkzeughalter x 2" }
+        },
+        "Tags" : [
+            "Toolholder",
+            "Static",
+            "VDI30"   
+        ],
+        "Rules" : [
             {
                 "$type" : "RequiredTagsRule",
-                "Tags" : [
-                    "Shank",
-                    "16x16" 
+                "Tags" : [ 
+                    "20x20", 
+                    "Shank" 
                 ]
             },
-            {
-                "$type" : "QuantityRule",
-                "Mode" : "Smaller",
+            { 
+                "$type" : "MaxItemRule", 
                 "Value" : 2
             }
         ]
     },
     {
         "$type" : "Node",
-        "ImageKey" : "od_shank_toolholder_4", 
+        "ImageKey" : "od_shank_toolholder_4",
         "Data" : {
-            "en" : { "Header" : "O.D. toolholder, 4 x 16x16, VDI25" },
-            "de" : { "Header" :"A.D. Werkzeughalter, 4 x 16x16, VDI25" }
+            "en" : { "Header" : "O.D. toolholder x 4" },
+            "de" : { "Header" :"A.D. Werkzeughalter x 4" }
         },
         "Tags" : [
             "Toolholder",
-            "VDI25",
-            "Static"
+            "Static",
+            "VDI30"   
         ],
         "Rules" : [
-            { 
+            {
                 "$type" : "RequiredTagsRule",
-                "Tags" : [
-                    "Shank",
-                    "16x16"
+                "Tags" : [ 
+                    "20x20", 
+                    "Shank" 
                 ]
             },
-            {
-                "$type" : "QuantityRule",
-                "Mode" : "Smaller",
+            { 
+                "$type" : "MaxItemRule", 
                 "Value" : 4
-            }
-        ]
-    },
-
-
-
-
-
-
-
-    {
-        "$type" : "Node",
-        "Data" : {
-            "en" : { "Header" : "O.D. toolholder, 1 x 20x20, VDI30" },
-            "de" : { "Header" :"A.D. Werkzeughalter, 1 x 20x20, VDI30" }
-        },
-        "Tags" : [
-            "Toolholder",
-            "VDI30",
-            "Static"
-        ],
-        "Rules" : [
-            {
-                "$type" : "RequiredTagsRule",
-                "Tags" : [
-                    "Shank",
-                    "20x20" 
-                ]
-            }
-        ]
-    },
-    {
-        "$type" : "Node",
-        "Data" : {
-            "en" : { "Header" : "O.D. toolholder, 2 x 20x20, VDI30" },
-            "de" : { "Header" :"A.D. Werkzeughalter, 2 x 20x20, VDI30" }
-        },
-        "Tags" : [
-            "Toolholder",
-            "VDI30",
-            "Static"
-        ],
-        "Rules" : [
-            {
-                "$type" : "RequiredTagsRule",
-                "Tags" : [
-                    "Shank",
-                    "20x20" 
-                ]
             }
         ]
     }

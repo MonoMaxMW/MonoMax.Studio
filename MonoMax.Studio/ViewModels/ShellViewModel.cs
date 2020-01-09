@@ -138,7 +138,8 @@ namespace MonoMax.Studio.ViewModels
                 new NodePageViewModel("Turrets", "Turrets.json"),
 
                 new NodePageViewModel("Toolholders", "Turningtoolholders.json", icon: toolholdersIcon),
-                new NodePageViewModel("Turningtools", "Turningtools.json", icon: toolingIcon),
+                new NodePageViewModel("Turningtools", "Shanktools_20x20.json", icon: toolingIcon),
+                new NodePageViewModel("Collets", "ER_collets.json")
 
             };
         }

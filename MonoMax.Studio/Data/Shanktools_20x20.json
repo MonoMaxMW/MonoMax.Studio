@@ -1,0 +1,84 @@
+[
+    {
+        "$type" : "Node",
+        "Key" : "PCLNL2020K12",
+        "ImageKey" : "pclnl",
+        "Ids" : {
+            "iso" : "PCLNL2020K12"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "PCLNR2020K12",
+        "ImageKey" : "pclnr",
+        "Ids" : {
+            "iso" : "PCLNL2020K12"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "SDJCL2020K11",
+        "ImageKey" : "sdjcl",
+        "Ids" : {
+            "iso" : "SDJCL2020K11"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "SDJCR2020K11",
+        "ImageKey" : "sdjcr",
+        "Ids" : {
+            "iso" : "SDJCR2020K11"
+        },
+        "Tags" : [
+            "Shank",
+            "20x20"
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Test endmill Ø10",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 10,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Test endmill Ø12",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 12,
+                "Unit" : "mm"
+            }
+        ]
+        
+    }
+]

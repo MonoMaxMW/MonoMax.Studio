@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 
 namespace MonoMax.Studio.Contracts
 {
+    public class AttributeEntry
+    {
+        public string Key { get; set; }
+        public string Unit { get; set; }
+        public object Value { get; set; }
+    }
+
     public interface INode : IDropTarget, ICloneable
     {
         string Header { get; }
@@ -18,6 +25,7 @@ namespace MonoMax.Studio.Contracts
         List<string> Tags { get; }
         Dictionary<string, string> Ids { get; set; }
         Dictionary<string, DataEntry> Data { get; set; }
+        List<AttributeEntry> Attributes { get; set; }
         INode Parent { get; }
         int NodesCount { get; }
         bool IsInitialized { get; }
