@@ -236,6 +236,14 @@ namespace MonoMax.Studio.Contracts
 
         }        
 
+        public void AddText(string languageKey, string text)
+        {
+            if (Data == null)
+                Data = new Dictionary<string, DataEntry>();
+
+            Data.Add(languageKey, new DataEntry() { Text = text });
+        }
+
         public virtual object Clone()
         {
             var clonedNode = new Node()
@@ -246,19 +254,12 @@ namespace MonoMax.Studio.Contracts
                 Data = this.Data,
                 Tags = this.Tags,
                 Ids = this.Ids,
+                Attributes = this.Attributes
             };
 
             clonedNode.Init();
 
             return clonedNode;
-        }
-
-        public void AddText(string languageKey, string text)
-        {
-            if (Data == null)
-                Data = new Dictionary<string, DataEntry>();
-
-            Data.Add(languageKey, new DataEntry() { Text = text });
         }
     }
 }

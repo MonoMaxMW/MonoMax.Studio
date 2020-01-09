@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MonoMax.Studio.Contracts
 {
+    [Serializable]
     public class AttributeEntry
     {
         public string Key { get; set; }

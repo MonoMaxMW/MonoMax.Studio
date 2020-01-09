@@ -129,17 +129,22 @@ namespace MonoMax.Studio.ViewModels
 
             var toolingIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/tooling_icon_64.png"));
             var toolholdersIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/toolholders_icon_64.png"));
+            var colletIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/collet_icon_64.png"));
 
             return new[]
             {
                 //new NodePageViewModel("Groups", "Groups.json", "package.svg"),
-                new NodePageViewModel("Emcoturn 45", "Emcoturn45.json"),
-                new NodePageViewModel("Fixtures", "Fixtures.json"),
-                new NodePageViewModel("Turrets", "Turrets.json"),
+                new NodePageViewModel("Emcoturn 45", new[]{ "Emcoturn45.json" }),
+                new NodePageViewModel("Fixtures", new[]{ "Fixtures.json" }),
+                new NodePageViewModel("Turrets", new[]{ "Turrets.json" }),
 
-                new NodePageViewModel("Toolholders", "Turningtoolholders.json", icon: toolholdersIcon),
-                new NodePageViewModel("Turningtools", "Shanktools_20x20.json", icon: toolingIcon),
-                new NodePageViewModel("Collets", "ER_collets.json")
+                new NodePageViewModel("Toolholders", new[] { "Turningtoolholders.json" }, icon: toolholdersIcon),
+                new NodePageViewModel("Turningtools", new[] { 
+                    "Shanktools_20x20.json", 
+                    "Endmills.json" 
+                }, 
+                icon: toolingIcon),
+                new NodePageViewModel("Collets", new[] { "ER_collets.json" }, icon: colletIcon),
 
             };
         }

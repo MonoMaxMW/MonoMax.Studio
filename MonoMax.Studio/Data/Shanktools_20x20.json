@@ -47,38 +47,5 @@
             "Shank",
             "20x20"
         ]
-    },
-
-    {
-        "$type" : "Node",
-        "Key" : "Test endmill Ø10",
-        "Tags" : [
-            "Cuttingtool",
-            "Endmill"
-        ],
-        "Attributes" : [
-            {
-                "Key" : "ConnectionDiameter",
-                "Value" : 10,
-                "Unit" : "mm"
-            }
-        ]
-        
-    },
-    {
-        "$type" : "Node",
-        "Key" : "Test endmill Ø12",
-        "Tags" : [
-            "Cuttingtool",
-            "Endmill"
-        ],
-        "Attributes" : [
-            {
-                "Key" : "ConnectionDiameter",
-                "Value" : 12,
-                "Unit" : "mm"
-            }
-        ]
-        
     }
 ]

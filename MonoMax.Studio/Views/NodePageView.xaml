@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MonoMax.Studio.Views"
              xmlns:mock="clr-namespace:MonoMax.Studio.ViewModels"
-             xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
-             xmlns:ext="clr-namespace:MonoMax.Studio.Internal"
              xmlns:dd="urn:gong-wpf-dragdrop"
              x:Name="uc"
              mc:Ignorable="d" 
@@ -169,7 +166,7 @@
                                                 </Image.Style>
                                             </Image>
                                         </StackPanel>
-                                        <StackPanel Grid.Row="1">
+                                        <StackPanel Grid.Row="1" Visibility="{Binding HasErrors, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <Grid Margin="3">
                                                 <Grid Height="5" />
                                                 <ItemsControl TextElement.Foreground="Red"

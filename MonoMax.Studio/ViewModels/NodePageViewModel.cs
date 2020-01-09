@@ -29,7 +29,7 @@ namespace MonoMax.Studio.ViewModels
         public ImageSource Icon { get; }
 
         public string Header { get; }
-        public string Filename { get; }
+        public string[] Filenames { get; }
         public string DefaultPictureFile { get; }
 
         [Obsolete]
@@ -65,10 +65,10 @@ namespace MonoMax.Studio.ViewModels
         }
 
 
-        public NodePageViewModel(string header, string filename, string defaultPictureFile = "", ImageSource icon = null)
+        public NodePageViewModel(string header, string[] files, string defaultPictureFile = "", ImageSource icon = null)
         {
             Header = header;
-            Filename = filename;
+            Filenames = files;
             DefaultPictureFile = defaultPictureFile;
             Icon = icon;
 
@@ -203,50 +203,54 @@ namespace MonoMax.Studio.ViewModels
             var baseDir = new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName;
 
             var allItems = new List<INode>();
-            var file = Path.Combine(baseDir, "Data", Filename);
 
-            if (File.Exists(file))
+            for (int i = 0; i < Filenames.Length; i++)
             {
-                var jsonSettings = new JsonSerializerSettings()
+                var file = Path.Combine(baseDir, "Data", Filenames[i]);
+
+                if (File.Exists(file))
                 {
-                    TypeNameHandling = TypeNameHandling.Auto,
-                    SerializationBinder = new KnownTypesBinder()
+                    var jsonSettings = new JsonSerializerSettings()
                     {
-                        KnownTypes = new List<Type>()
-                            .Concat(Rule.KnownTypes)
-                            .Concat(Node.KnownTypes)
-                            .ToList()
-                    }
-                };
-
-                var items = JsonConvert.DeserializeObject<List<INode>>(File.ReadAllText(file), jsonSettings);
-
-                if (!string.IsNullOrEmpty(DefaultPictureFile))
-                    items.ForEach(x => x.ImageKey = DefaultPictureFile);
-
-                foreach (var item in items)
-                {
-                    item.Init();
-                    if(item.Ids != null)
-                    {
-                        foreach (var id in item.Ids)
+                        TypeNameHandling = TypeNameHandling.Auto,
+                        SerializationBinder = new KnownTypesBinder()
                         {
-                            var tmp = $"{id.Key}_{id.Value}";
-                            if (_componentDetails.ContainsKey(tmp))
+                            KnownTypes = new List<Type>()
+                                .Concat(Rule.KnownTypes)
+                                .Concat(Node.KnownTypes)
+                                .ToList()
+                        }
+                    };
+
+                    var items = JsonConvert.DeserializeObject<List<INode>>(File.ReadAllText(file), jsonSettings);
+
+                    if (!string.IsNullOrEmpty(DefaultPictureFile))
+                        items.ForEach(x => x.ImageKey = DefaultPictureFile);
+
+                    foreach (var item in items)
+                    {
+                        item.Init();
+                        if (item.Ids != null)
+                        {
+                            foreach (var id in item.Ids)
                             {
-                                item.AddText("en", _componentDetails[tmp]);
+                                var tmp = $"{id.Key}_{id.Value}";
+                                if (_componentDetails.ContainsKey(tmp))
+                                {
+                                    item.AddText("en", _componentDetails[tmp]);
+                                }
+
+
+
                             }
 
 
-
                         }
-
-
                     }
-                }
 
-                items.ForEach(x => x.Init());
-                allItems.AddRange(items);
+                    items.ForEach(x => x.Init());
+                    allItems.AddRange(items);
+                } 
             }
            
             return allItems;

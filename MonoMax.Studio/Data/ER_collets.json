@@ -1,6 +1,7 @@
 [
     {
         "$type" : "Node",
+        "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø10" },
             "de" : { "Heade" : "ER25 Spannzange Ø10" }
@@ -18,6 +19,78 @@
                 "$type" : "RangeRule",
                 "MinValue" : 9,
                 "MaxValue" : 10,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø12" },
+            "de" : { "Heade" : "ER25 Spannzange Ø12" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25"
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "RangeRule",
+                "MinValue" : 11,
+                "MaxValue" : 12,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø14" },
+            "de" : { "Heade" : "ER25 Spannzange Ø14" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25"
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "RangeRule",
+                "MinValue" : 13,
+                "MaxValue" : 14,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø16" },
+            "de" : { "Heade" : "ER25 Spannzange Ø16" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25"
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "RangeRule",
+                "MinValue" : 15,
+                "MaxValue" : 16,
                 "ExpectedKey" : "ConnectionDiameter"
             }
         ]

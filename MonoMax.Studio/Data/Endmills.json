@@ -1,0 +1,85 @@
+[
+    {
+        "$type" : "Node",
+        "ImageKey" : "endmill",
+        "Key" : "Test endmill Ø6",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 6,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "endmill",
+        "Key" : "Test endmill Ø8",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 8,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "endmill",
+        "Key" : "Test endmill Ø10",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 10,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "endmill",
+        "Key" : "Test endmill Ø12",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 12,
+                "Unit" : "mm"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "endmill",
+        "Key" : "Test endmill Ø16",
+        "Tags" : [
+            "Cuttingtool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 16,
+                "Unit" : "mm"
+            }
+        ]
+    }
+]

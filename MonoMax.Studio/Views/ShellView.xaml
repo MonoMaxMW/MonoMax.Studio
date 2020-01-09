@@ -244,11 +244,6 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid.ToolTip>
                                     <ToolTip Background="{x:Null}" BorderThickness="0">
-                                        <Grid>
-                                            <!--<svg:SvgViewbox ext:SvgViewboxAttachedProperties.Source="{Binding FullImagePath, TargetNullValue={x:Static ext:Extensions.ImageFallbackPath}}" 
-                                                        Height="128" Width="128">
-                                            </svg:SvgViewbox>-->
-                                        </Grid>
                                     </ToolTip>
                                 </Grid.ToolTip>
                                 <Image Height="32" Width="32" Source="{Binding Images[32], FallbackValue={StaticResource Missing_img_32}}" />
