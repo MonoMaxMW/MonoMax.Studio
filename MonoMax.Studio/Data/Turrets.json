@@ -22,6 +22,12 @@
             {
                 "$type" : "MaxItemRule",
                 "Value" : 12
+            },
+            {
+                "$type" : "IllegalTagsRule",
+                "Tags" : [
+                    "DIN5482"
+                ]
             }
         ]
     },

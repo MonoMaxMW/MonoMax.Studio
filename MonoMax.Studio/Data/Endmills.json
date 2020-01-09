@@ -2,7 +2,7 @@
     {
         "$type" : "Node",
         "ImageKey" : "endmill",
-        "Key" : "Test endmill Ø6",
+        "Key" : "Endmill Ø6",
         "Tags" : [
             "Cuttingtool",
             "Endmill"
@@ -19,7 +19,7 @@
     {
         "$type" : "Node",
         "ImageKey" : "endmill",
-        "Key" : "Test endmill Ø8",
+        "Key" : "Endmill Ø8",
         "Tags" : [
             "Cuttingtool",
             "Endmill"
@@ -36,7 +36,7 @@
     {
         "$type" : "Node",
         "ImageKey" : "endmill",
-        "Key" : "Test endmill Ø10",
+        "Key" : "Endmill Ø10",
         "Tags" : [
             "Cuttingtool",
             "Endmill"
@@ -53,7 +53,7 @@
     {
         "$type" : "Node",
         "ImageKey" : "endmill",
-        "Key" : "Test endmill Ø12",
+        "Key" : "Endmill Ø12",
         "Tags" : [
             "Cuttingtool",
             "Endmill"
@@ -69,7 +69,7 @@
     {
         "$type" : "Node",
         "ImageKey" : "endmill",
-        "Key" : "Test endmill Ø16",
+        "Key" : "Endmill Ø16",
         "Tags" : [
             "Cuttingtool",
             "Endmill"
