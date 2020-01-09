@@ -24,13 +24,17 @@ namespace MonoMax.Studio.Contracts
         string Key { get; }
         string ImageKey { get; set; }
         List<string> Tags { get; }
+        int TreeDepth { get; }
         Dictionary<string, string> Ids { get; set; }
         Dictionary<string, DataEntry> Data { get; set; }
         List<AttributeEntry> Attributes { get; set; }
+        IReadOnlyList<INode> ChildNodes { get; }
+        IEnumerable<INode> Flatten();
         INode Parent { get; }
         int NodesCount { get; }
         bool IsInitialized { get; }
         void Init();
+        void Refresh(int treeDepth = 0);
         bool Validate(params object[] arguments);
         void AddNode(INode node);
         void RemoveNode(INode node);

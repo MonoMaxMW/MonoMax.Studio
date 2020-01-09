@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using MonoMax.Studio.Contracts;
 using MonoMax.Studio.Contracts.Rules;
 using MonoMax.Studio.Internal;
+using MonoMax.Studio.Reports;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +63,21 @@ namespace MonoMax.Studio.ViewModels
             ContextCommands = new[]
             {
                 new CommandContainer("Delete", DeleteNodeCommand),
+
+                new CommandContainer("Generate report", new RelayCommand<object>(
+                    (obj) =>
+                    {
+                        var template = Path.Combine(
+                            new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName, 
+                            "Reports", 
+                            "Report_template_letter.xlsx");
+
+                        SelectedNode.Refresh();
+                        var items = SelectedNode.Flatten().ToList();
+                        ReportGenerator.GenerateExcelReport(template, items);
+
+
+                    }, p => SelectedNode != null && SelectedNode.Header != "Root")),
 
                 new CommandContainer("Serialize", new RelayCommand<object>(
                     (o) =>

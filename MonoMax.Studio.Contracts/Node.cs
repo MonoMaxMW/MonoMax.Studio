@@ -46,6 +46,8 @@ namespace MonoMax.Studio.Contracts
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public IReadOnlyList<INode> ChildNodes => _nodes;
+
         [field: NonSerialized]
         public bool IsInitialized { get; private set; }
 
@@ -61,6 +63,30 @@ namespace MonoMax.Studio.Contracts
         public bool HasErrors => _errors?.Count > 0;
         public int NodesCount => _nodes.Count;
         public bool HasImageSet => Images != null && Images.Count == 4;
+        public int TreeDepth { get; private set; }
+
+        public void Refresh(int treeDepth = 0)
+        {
+            TreeDepth = treeDepth;
+
+            if(ChildNodes != null)
+            {
+                foreach (var child in ChildNodes)
+                {
+                    child.Refresh(child.Parent.TreeDepth + 1);
+                }
+            }
+        }
+
+        public IEnumerable<INode> Flatten()
+        {
+            yield return this;
+
+            foreach (var node in ChildNodes.SelectMany(childNode => childNode.Flatten()))
+            {
+                yield return node;
+            }
+        }
 
         private string GetText()
         {
@@ -169,7 +195,7 @@ namespace MonoMax.Studio.Contracts
 
         public override string ToString()
         {
-            return Key;
+            return $"[{TreeDepth}] {Header}";
         }
 
         protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")

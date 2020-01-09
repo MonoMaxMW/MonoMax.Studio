@@ -82,6 +82,7 @@
     </ApplicationDefinition>
     <Compile Include="Internal\CommandContainer.cs" />
     <Compile Include="Internal\RelayCommand.cs" />
+    <Compile Include="Reports\ReportGenerator.cs" />
     <Compile Include="ViewModels\IShell.cs" />
     <Compile Include="ViewModels\NodePageViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -152,6 +153,9 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Report_template_letter.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

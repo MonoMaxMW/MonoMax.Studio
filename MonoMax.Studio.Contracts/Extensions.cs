@@ -15,4 +15,5 @@ namespace MonoMax.Studio.Contracts
             return thread.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
         }
     }
+
 }
