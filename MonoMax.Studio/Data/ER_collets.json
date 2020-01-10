@@ -3,6 +3,30 @@
         "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
+            "en" : { "Header" : "ER25 collet Ø8" },
+            "de" : { "Heade" : "ER25 Spannzange Ø8" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25"
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "RangeRule",
+                "MinValue" : 7,
+                "MaxValue" : 8,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "ImageKey" : "ER_collet",
+        "Data" : {
             "en" : { "Header" : "ER25 collet Ø10" },
             "de" : { "Heade" : "ER25 Spannzange Ø10" }
         },

@@ -1,0 +1,12 @@
+{
+    "$type" : "Node",
+    "Key" : "EMCOTURN E45 - SIEMENS",
+    "Tags" : [
+        "Machine",
+        "Lathe",
+        "Siemens",
+        "Subspindle",
+        "828d",
+        "Live tooling"
+    ]
+}

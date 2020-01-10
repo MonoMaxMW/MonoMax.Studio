@@ -1,0 +1,23 @@
+﻿[
+    {
+        "$type" : "Node",
+        "Key" : "Turningspindle 45",
+        "ImageKey" : "turningspindle",
+        "Tags" : [
+            "Spindle",
+            "Turningspindle"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Fixture"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            }
+        ]
+    }
+]

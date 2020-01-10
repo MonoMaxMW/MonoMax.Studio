@@ -152,7 +152,11 @@ namespace MonoMax.Studio.ViewModels
             {
                 //new NodePageViewModel("Groups", "Groups.json", "package.svg"),
                 new NodePageViewModel("Emcoturn 45", new[]{ "Emcoturn45.json" }),
-                new NodePageViewModel("Fixtures", new[]{ "Fixtures.json" }),
+                new NodePageViewModel("Fixtures", new[]{ 
+                    "Spindles.json",
+                    "Fixtures.json",
+                    
+                }),
                 new NodePageViewModel("Turrets", new[]{ "Turrets.json" }),
 
                 new NodePageViewModel("Toolholders", new[] { 
@@ -161,7 +165,8 @@ namespace MonoMax.Studio.ViewModels
                 }, icon: toolholdersIcon),
                 new NodePageViewModel("Turningtools", new[] { 
                     "Shanktools_20x20.json", 
-                    "Endmills.json" 
+                    "Endmills.json",
+                    "Soliddrills.json"
                 }, 
                 icon: toolingIcon),
                 new NodePageViewModel("Collets", new[] { "ER_collets.json" }, icon: colletIcon),
