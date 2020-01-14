@@ -201,13 +201,11 @@ namespace MonoMax.Studio.ViewModels
 
         private List<INode> DeserializeNodes()
         {
-            var baseDir = new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName;
-
             var allItems = new List<INode>();
 
             for (int i = 0; i < Filenames.Length; i++)
             {
-                var file = Path.Combine(baseDir, "Data", Filenames[i]);
+                var file = AssetRepository.GetFullAssetpath(Filenames[i]);
 
                 if (File.Exists(file))
                 {
@@ -228,25 +226,26 @@ namespace MonoMax.Studio.ViewModels
                     if (!string.IsNullOrEmpty(DefaultPictureFile))
                         items.ForEach(x => x.ImageKey = DefaultPictureFile);
 
-                    foreach (var item in items)
+                    if (_componentDetails != null)
                     {
-                        item.Init();
-                        if (item.Ids != null)
+                        foreach (var item in items)
                         {
-                            foreach (var id in item.Ids)
+                            item.Init();
+                            if (item.Ids != null)
                             {
-                                var tmp = $"{id.Key}_{id.Value}";
-                                if (_componentDetails.ContainsKey(tmp))
+                                foreach (var id in item.Ids)
                                 {
-                                    item.AddText("en", _componentDetails[tmp]);
+                                    var tmp = $"{id.Key}_{id.Value}";
+                                    if (_componentDetails.ContainsKey(tmp))
+                                    {
+                                        item.AddText("en", _componentDetails[tmp]);
+                                    }
+
                                 }
 
 
-
                             }
-
-
-                        }
+                        } 
                     }
 
                     items.ForEach(x => x.Init());

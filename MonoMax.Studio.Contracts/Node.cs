@@ -180,14 +180,11 @@ namespace MonoMax.Studio.Contracts
             if (!string.IsNullOrEmpty(ImageKey))
             {
                 var tmpDict = new Dictionary<int, ImageSource>();
-                var baseDir = new FileInfo(GetType().Assembly.Location).Directory.FullName;
+                var baseDir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
                 for (int imgSize = 32; imgSize <= 256; imgSize+=imgSize)
                 {
-                    var imgPath = Path.Combine(
-                        baseDir, "Data",
-                        "img",
-                        ImageKey + $"_{imgSize}.png");
+                    var imgPath = AssetRepository.GetImagePath(ImageKey, imgSize);
 
                     if (File.Exists(imgPath))
                         tmpDict.Add(imgSize, new BitmapImage(new Uri(imgPath, UriKind.RelativeOrAbsolute)));

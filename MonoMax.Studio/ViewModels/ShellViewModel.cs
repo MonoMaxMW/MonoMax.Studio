@@ -152,7 +152,6 @@ namespace MonoMax.Studio.ViewModels
 
         private NodePageViewModel[] GetNodePages()
         {
-
             var toolingIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/tooling_icon_64.png"));
             var toolholdersIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/toolholders_icon_64.png"));
             var colletIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/collet_icon_64.png"));
@@ -175,8 +174,8 @@ namespace MonoMax.Studio.ViewModels
                     "Generated_toolholders.json"
                 }, icon: toolholdersIcon),
 
-                new NodePageViewModel("Turningtools", new[]{ 
-                    "Shanktools_20x20.json", 
+                new NodePageViewModel("Cuttingtools", new[]{ 
+                    "Shanktools_16x16.json", 
                     "Endmills.json",
                     "Soliddrills.json"
                 }, 

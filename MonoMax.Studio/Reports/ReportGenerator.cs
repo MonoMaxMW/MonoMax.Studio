@@ -27,14 +27,6 @@ namespace MonoMax.Studio.Reports
             return result;
         }
 
-        public static string GetImage(string imageKey, int size)
-        {
-            var baseDir = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
-            var imgPath = Path.Combine(baseDir, "Data", "img", imageKey + $"_{size}.png");
-
-            return imgPath;
-        }
-
         public static void GenerateExcelReport(string template, IEnumerable<INode> nodes, string reportFile = "")
         {
             if (!File.Exists(template))
@@ -63,9 +55,9 @@ namespace MonoMax.Studio.Reports
                 var rowHeight = ws.Row(startRow).Height;
                 
                 var headerColIdx = wb.Names["ItemHeader"].Start.Column;
-                var vendorColIdx = wb.Names["ItemVendor"].Start.Column;
-                var itemIdColIdx = wb.Names["ItemId"].Start.Column;
+                var noteColIdx = wb.Names["ItemNote"].Start.Column;
                 var r = startRow;
+                var margin = 2;
 
                 foreach (var item in nodes)
                 {
@@ -88,31 +80,21 @@ namespace MonoMax.Studio.Reports
 
 
                         itemId = item.Ids[vendor];
-                        ws.Cells[r, vendorColIdx].Value = vendor.ToUpper();
-                        ws.Cells[r, itemIdColIdx].Value = itemId;
                     }
 
 
                     if (!string.IsNullOrEmpty(item.ImageKey))
                     {
-                        var imgFile = GetImage(item.ImageKey, 128);
+                        var imgSz = 64;
+                        var imgFile = AssetRepository.GetImagePath(item.ImageKey, imgSz);
 
                         if (File.Exists(imgFile))
                         {
-                            var width = ws.Column(imgColIdx).Width;
-                            var factorD = 64.0d / 128.0d;
+                            var factorD = 40.0d / imgSz;
                             var factor = Convert.ToInt32(factorD * 100.0d);
                             var pic = ws.Drawings.AddPicture($"{Guid.NewGuid()}", new FileInfo(imgFile));
                             pic.SetSize(factor);
-
-                            var iw = pic.Image.Width * factorD;
-                            var ih = pic.Image.Height * factorD;
-                            var x = Convert.ToInt32((64.0 - iw) * 0.5d);
-                            var y = Convert.ToInt32((64.0 - ih) * 0.5d);
-
-
-
-                            pic.SetPosition(r-1, y, imgColIdx-1, x);
+                            pic.SetPosition(r-1, 0, imgColIdx-1, 0);
                         }
                     }
 
@@ -130,7 +112,7 @@ namespace MonoMax.Studio.Reports
                 imgColIdx = wb.Names["SumItemIcon"].Start.Column;
                 rowHeight = ws.Row(startRow).Height;
                 headerColIdx = wb.Names["SumItemHeader"].Start.Column;
-                vendorColIdx = wb.Names["SumItemVendor"].Start.Column;
+                noteColIdx = wb.Names["SumItemVendor"].Start.Column;
                 r = startRow;
 
                 foreach (var item in distinctNodes)
@@ -143,22 +125,16 @@ namespace MonoMax.Studio.Reports
 
                     if (!string.IsNullOrEmpty(item.ImageKey))
                     {
-                        var imgFile = GetImage(item.ImageKey, 64);
+                        var imgSz = 64;
+                        var imgFile = AssetRepository.GetImagePath(item.ImageKey, imgSz);
 
                         if (File.Exists(imgFile))
                         {
-                            var width = ws.Column(imgColIdx).Width;
-                            var factorD = 36.0d / 64.0d;
+                            var factorD = 40.0d / imgSz;
                             var factor = Convert.ToInt32(factorD * 100.0d);
                             var pic = ws.Drawings.AddPicture($"{Guid.NewGuid()}", new FileInfo(imgFile));
                             pic.SetSize(factor);
-
-                            var iw = pic.Image.Width * factorD;
-                            var ih = pic.Image.Height * factorD;
-                            var x = Convert.ToInt32((40.0 - iw) * 0.5d);
-                            var y = Convert.ToInt32((40.0 - ih) * 0.5d);
-
-                            pic.SetPosition(r - 1, y, imgColIdx - 1, x);
+                            pic.SetPosition(r - 1, 0, imgColIdx - 1, 0);
                         }
                     }
 
