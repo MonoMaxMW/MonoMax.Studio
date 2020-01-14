@@ -1,8 +1,8 @@
 [
     {
         "$type" : "SpindleConnection",
-        "Key" : "Radial VDI30 turret",
-        "ImageKey" : "turret_radial_vdi",
+        "Key" : "Radial VDI25 turret",
+        "ImageKey" : "vdi_turret_radial",
         "Tags" : [
             "Turret",
             "Channel",
@@ -16,7 +16,7 @@
                 "$type" : "RequiredTagsRule",
                 "Tags" : [
                     "Toolholder",
-                    "VDI30"
+                    "VDI25"
                 ]
             },
             {
@@ -32,8 +32,8 @@
         ]
     },
     {
-        "Key" : "Axial VDI30 turret",
-        "ImageKey" : "turret_axial_vdi",
+        "Key" : "Axial VDI25 turret",
+        "ImageKey" : "vdi_turret_axial",
         "Tags" : [
             "Turret",
             "Channel",
@@ -47,7 +47,7 @@
                 "$type" : "RequiredTagsRule",
                 "Tags" : [
                     "Toolholder",
-                    "VDI30"
+                    "VDI25"
                 ]
             },
             {

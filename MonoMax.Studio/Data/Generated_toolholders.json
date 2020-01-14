@@ -1,6 +1,7 @@
 ﻿[
     {
         "Key": "Face and O.D. Turning holder - Universal",
+        "ImageKey": "vdi_od_shank_universal",
         "Ids": {
           "emco": "R2Z415W"
         },
@@ -56,6 +57,7 @@
       },
       {
         "Key": "Double Face and O.D. Turning holder",
+        "ImageKey": "vdi_od_shank_x2",
         "Ids": {
           "emco": "R2Z810W"
         },
