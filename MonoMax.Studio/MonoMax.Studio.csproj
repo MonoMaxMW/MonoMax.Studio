@@ -84,6 +84,7 @@
     <Compile Include="Internal\RelayCommand.cs" />
     <Compile Include="Reports\ReportGenerator.cs" />
     <Compile Include="ViewModels\IShell.cs" />
+    <Compile Include="ViewModels\GenerateNodedataViewModel.cs" />
     <Compile Include="ViewModels\NodePageViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -91,6 +92,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Internal\MefBootstrapper.cs" />
+    <Compile Include="Views\GenerateNodedataView.xaml.cs">
+      <DependentUpon>GenerateNodedataView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NodePageView.xaml.cs">
       <DependentUpon>NodePageView.xaml</DependentUpon>
     </Compile>
@@ -126,9 +130,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\Fixtures.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\Groups.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\Endmills.json">
@@ -172,6 +173,10 @@
     <Resource Include="Assets\valid_16.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\GenerateNodedataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NodePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

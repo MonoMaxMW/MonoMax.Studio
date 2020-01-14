@@ -5,7 +5,8 @@
         "ImageKey" : "turningspindle",
         "Tags" : [
             "Spindle",
-            "Turningspindle"
+            "Turningspindle",
+            "Machine component"
         ],
         "Rules" : [
             {

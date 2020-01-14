@@ -1,6 +1,5 @@
 [
     {
-        "$type" : "Node",
         "Key" : "EMCOTURN E45 - SIEMENS",
         "Tags" : [
             "Machine",
@@ -30,7 +29,6 @@
         }
     },
     {
-        "$type" : "Node",
         "Key" : "EMCOTURN E45 M - SIEMENS",
         "Tags" : [
             "Machine",

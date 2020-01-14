@@ -1,5 +1,6 @@
 ﻿using GongSolutions.Wpf.DragDrop;
 using MonoMax.Studio.Contracts.Rules;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,18 +19,25 @@ using System.Xml.Serialization;
 
 namespace MonoMax.Studio.Contracts
 {
+    public class NodeEqualityComparer : EqualityComparer<INode>
+    {
+        public override bool Equals(INode x, INode y) => x.GetCompareValue() == y.GetCompareValue();
+
+        public override int GetHashCode(INode obj)
+        {
+            return base.GetHashCode();
+        }
+    }
+
     [Serializable]
     public class Node : INode, INotifyPropertyChanged, IDropTarget
     {
-
 
         public static Type[] KnownTypes = new[]
         {
             typeof(Node),
             typeof(SpindleConnection),
         };
-
-
 
         [NonSerialized]
         private Dictionary<string, string> _errors;
@@ -46,6 +54,7 @@ namespace MonoMax.Studio.Contracts
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
+        [JsonIgnore]
         public IReadOnlyList<INode> ChildNodes => _nodes;
 
         [field: NonSerialized]
@@ -57,8 +66,12 @@ namespace MonoMax.Studio.Contracts
         public string Key { get; set; }
         public string ImageKey { get; set; }
 
+        [JsonIgnore]
         public string Header => GetHeader();
+
+        [JsonIgnore]
         public string Text => GetText();
+        [JsonIgnore]
         public bool HasText => !string.IsNullOrEmpty(Text);
         public bool HasErrors => _errors?.Count > 0;
         public int NodesCount => _nodes.Count;
@@ -261,6 +274,14 @@ namespace MonoMax.Studio.Contracts
             this.IsExpanded = true;
 
         }        
+
+        public string GetCompareValue()
+        {
+            var idItem = Ids != null ? Ids.First().ToString() : string.Empty;
+            var key = Header;
+
+            return string.IsNullOrEmpty(idItem) ? key : idItem;
+        }
 
         public void AddText(string languageKey, string text)
         {

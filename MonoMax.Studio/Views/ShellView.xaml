@@ -142,120 +142,127 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.4*" />
-            <ColumnDefinition Width="1" />
-            <ColumnDefinition Width="0.6*" />
-        </Grid.ColumnDefinitions>
-        <DockPanel Grid.Column="0">
-            <ItemsControl DockPanel.Dock="Left"
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="Generate data" Command="{Binding OpenNodedataGeneratorCommand}" />
+            </Menu.Items>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="0.6*" />
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <ItemsControl DockPanel.Dock="Left"
                           Background="#FF272727" MinWidth="64"
                           ItemsSource="{Binding NodePagesViewModels}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border x:Name="bd">
-                            <Image RenderOptions.EdgeMode="Aliased" Stretch="None"
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border x:Name="bd">
+                                <Image RenderOptions.EdgeMode="Aliased" Stretch="None"
                                    RenderOptions.BitmapScalingMode="HighQuality" Margin="3" 
                                    Height="64" Width="64" Source="{Binding Icon}" />
-                            <Border.ToolTip>
-                                <ToolTip Background="{StaticResource hover_colorbrush_2}" BorderThickness="0">
-                                    <DockPanel>
-                                        <TextBlock Text="{Binding Header}" Foreground="White" DockPanel.Dock="Top" />
-                                    </DockPanel>
-                                </ToolTip>
-                            </Border.ToolTip>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseLeftButtonDown">
-                                    <cal:ActionMessage MethodName="ActivateNodePage">
-                                        <cal:Parameter Value="$dataContext" />
-                                    </cal:ActionMessage>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                            <Border.Style>
-                                <Style>
-                                    <Setter Property="Border.Background" Value="{StaticResource accent_colorbrush_1}" />
-                                    <Style.Triggers>
-                                        <Trigger Property="Border.IsMouseOver" Value="True">
-                                            <Setter Property="Border.Background" Value="{StaticResource hover_colorbrush_1}" />
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
-                            
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <ContentControl x:Name="ActiveNodePage" />
-        </DockPanel>
-        <DockPanel Grid.Column="2">
-            <TreeView x:Name="treeview"
+                                <Border.ToolTip>
+                                    <ToolTip Background="{StaticResource hover_colorbrush_2}" BorderThickness="0">
+                                        <DockPanel>
+                                            <TextBlock Text="{Binding Header}" Foreground="White" DockPanel.Dock="Top" />
+                                        </DockPanel>
+                                    </ToolTip>
+                                </Border.ToolTip>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                        <cal:ActionMessage MethodName="ActivateNodePage">
+                                            <cal:Parameter Value="$dataContext" />
+                                        </cal:ActionMessage>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Border.Style>
+                                    <Style>
+                                        <Setter Property="Border.Background" Value="{StaticResource accent_colorbrush_1}" />
+                                        <Style.Triggers>
+                                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                                <Setter Property="Border.Background" Value="{StaticResource hover_colorbrush_1}" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ContentControl x:Name="ActiveNodePage" />
+            </DockPanel>
+            <DockPanel Grid.Column="2">
+                <TreeView x:Name="treeview"
                       ItemsSource="{Binding Root}"
                       HorizontalContentAlignment="Stretch"
                       Tag="{Binding}">
-                <TreeView.InputBindings>
-                    <KeyBinding Key="Delete" Command="{Binding DeleteNodeCommand}" />
-                </TreeView.InputBindings>
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectedItemChanged">
-                        <cal:ActionMessage MethodName="SelectedNodeChanged">
-                            <cal:Parameter Value="$eventArgs" />
-                        </cal:ActionMessage>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
+                    <TreeView.InputBindings>
+                        <KeyBinding Key="Delete" Command="{Binding DeleteNodeCommand}" />
+                    </TreeView.InputBindings>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectedItemChanged">
+                            <cal:ActionMessage MethodName="SelectedNodeChanged">
+                                <cal:Parameter Value="$eventArgs" />
+                            </cal:ActionMessage>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
 
-                <TreeView.Resources>
-                    <Style TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStrechStyle}">
-                        <Setter Property="Tag" Value="{Binding ElementName=treeview, Path=Tag}" />
-                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
-                        <Setter Property="VerticalContentAlignment" Value="Center" />
-                        <Setter Property="ContextMenu">
-                            <Setter.Value>
-                                <ContextMenu DataContext="{Binding Path=PlacementTarget.Tag, RelativeSource={RelativeSource Self}}" 
+                    <TreeView.Resources>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStrechStyle}">
+                            <Setter Property="Tag" Value="{Binding ElementName=treeview, Path=Tag}" />
+                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                            <Setter Property="ContextMenu">
+                                <Setter.Value>
+                                    <ContextMenu DataContext="{Binding Path=PlacementTarget.Tag, RelativeSource={RelativeSource Self}}" 
                                              ItemsSource="{Binding ContextCommands}">
-                                    <ContextMenu.Resources>
-                                        <Style TargetType="{x:Type MenuItem}">
-                                            <Setter Property="Header" Value="{Binding Header}" />
-                                            <Setter Property="ItemsSource" Value="{Binding ChildCommands}" />
-                                            <Setter Property="Command" Value="{Binding Command}" />
-                                        </Style>
-                                    </ContextMenu.Resources>
-                                </ContextMenu>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue"/>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="LightBlue"/>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black"/>
-                </TreeView.Resources>
+                                        <ContextMenu.Resources>
+                                            <Style TargetType="{x:Type MenuItem}">
+                                                <Setter Property="Header" Value="{Binding Header}" />
+                                                <Setter Property="ItemsSource" Value="{Binding ChildCommands}" />
+                                                <Setter Property="Command" Value="{Binding Command}" />
+                                            </Style>
+                                        </ContextMenu.Resources>
+                                    </ContextMenu>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="LightBlue"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Black"/>
+                    </TreeView.Resources>
 
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Nodes}">
-                        <DockPanel Margin="2">
-                            <Grid dd:DragDrop.IsDropTarget="True"
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Nodes}">
+                            <DockPanel Margin="2">
+                                <Grid dd:DragDrop.IsDropTarget="True"
                                   dd:DragDrop.DropHandler="{Binding}"
                                   dd:DragDrop.DropTargetAdornerBrush="{StaticResource accent_colorbrush_2}"
                                   Background="Transparent" Margin="3,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="1*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.ToolTip>
-                                    <ToolTip Background="{x:Null}" BorderThickness="0">
-                                    </ToolTip>
-                                </Grid.ToolTip>
-                                <Image Height="32" Width="32" Source="{Binding Images[32], FallbackValue={StaticResource Missing_img_32}}" />
-                                <Border Grid.Column="1">
-                                    <TextBlock Margin="3,0,0,0" Text="{Binding  Header}" VerticalAlignment="Center" />
-                                </Border>
-                            </Grid>
-                        </DockPanel>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.ToolTip>
+                                        <ToolTip Background="{x:Null}" BorderThickness="0">
+                                        </ToolTip>
+                                    </Grid.ToolTip>
+                                    <Image Height="32" Width="32" Source="{Binding Images[32], FallbackValue={StaticResource Missing_img_32}}" />
+                                    <Border Grid.Column="1">
+                                        <TextBlock Margin="3,0,0,0" Text="{Binding  Header}" VerticalAlignment="Center" />
+                                    </Border>
+                                </Grid>
+                            </DockPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
 
-            </TreeView>
-        </DockPanel>
-    </Grid>
+                </TreeView>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
 </Window>

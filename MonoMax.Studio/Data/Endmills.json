@@ -1,6 +1,5 @@
 [
     {
-        "$type" : "Node",
         "ImageKey" : "endmill",
         "Key" : "Endmill Ø6",
         "Tags" : [
@@ -17,7 +16,6 @@
         
     },
     {
-        "$type" : "Node",
         "ImageKey" : "endmill",
         "Key" : "Endmill Ø8",
         "Tags" : [
@@ -34,7 +32,6 @@
         
     },
     {
-        "$type" : "Node",
         "ImageKey" : "endmill",
         "Key" : "Endmill Ø10",
         "Tags" : [
@@ -51,7 +48,6 @@
         
     },
     {
-        "$type" : "Node",
         "ImageKey" : "endmill",
         "Key" : "Endmill Ø12",
         "Tags" : [
@@ -67,7 +63,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "endmill",
         "Key" : "Endmill Ø16",
         "Tags" : [

@@ -53,6 +53,15 @@ namespace MonoMax.Studio.ViewModels
             NodePagesViewModels = GetNodePages();
             ActiveNodePage = NodePagesViewModels.First();
 
+            OpenNodedataGeneratorCommand = new RelayCommand<object>(
+                (o) =>
+                {
+                    var wMgr = IoC.Get<IWindowManager>();
+                    wMgr.ShowDialog(new GenerateNodedataViewModel());
+
+
+                });
+
             DeleteNodeCommand = new RelayCommand<object>(
                     (o) =>
                     {
@@ -208,6 +217,7 @@ namespace MonoMax.Studio.ViewModels
 
         public INode[] Root { get; }
         public ICommand AddNodeCommand { get; }
+        public ICommand OpenNodedataGeneratorCommand { get; }
 
     }
 }

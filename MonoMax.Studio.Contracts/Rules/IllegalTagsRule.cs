@@ -20,7 +20,7 @@ namespace MonoMax.Studio.Contracts.Rules
                 return false;
 
             var isValid = true;
-
+  
             if (nodeToVerify.Tags != null)
             {
                 for (int i = 0; i < Tags.Count; i++)

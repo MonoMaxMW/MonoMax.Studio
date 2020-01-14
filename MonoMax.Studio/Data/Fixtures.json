@@ -1,8 +1,10 @@
 [
     {
-        "$type" : "Node",
         "Key" : "TopPlus mini 42",
         "ImageKey" : "hainbuch_topplus_mini",
+        "Ids" : {
+            "Hainbuch" : "202921"
+        },
         "Tags" : [
             "Fixture",
             "Deadend style",
@@ -11,7 +13,6 @@
     },
 
     {
-        "$type" : "Node",
         "Key" : "TopPlus mini 52",
         "ImageKey" : "hainbuch_topplus_mini",
         "Tags" : [
@@ -22,7 +23,6 @@
     },
 
     {
-        "$type" : "Node",
         "Key" : "TopPlus mini 65",
         "ImageKey" : "hainbuch_topplus_mini",
         "Tags" : [

@@ -222,7 +222,7 @@ namespace MonoMax.Studio.ViewModels
                         }
                     };
 
-                    var items = JsonConvert.DeserializeObject<List<INode>>(File.ReadAllText(file), jsonSettings);
+                    var items = JsonConvert.DeserializeObject<List<Node>>(File.ReadAllText(file), jsonSettings);
 
                     if (!string.IsNullOrEmpty(DefaultPictureFile))
                         items.ForEach(x => x.ImageKey = DefaultPictureFile);

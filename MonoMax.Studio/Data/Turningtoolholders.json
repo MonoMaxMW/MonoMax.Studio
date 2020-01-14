@@ -1,7 +1,6 @@
 
 [
     {
-        "$type" : "Node",
         "Data" : {
             "en" : { "Header" : "O.D. toolholder" },
             "de" : { "Header" :"A.D. Werkzeughalter" }
@@ -26,7 +25,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "od_shank_toolholder_2",
         "Data" : {
             "en" : { "Header" : "O.D. toolholder x 2" },
@@ -52,7 +50,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "od_shank_toolholder_4",
         "Data" : {
             "en" : { "Header" : "O.D. toolholder x 4" },

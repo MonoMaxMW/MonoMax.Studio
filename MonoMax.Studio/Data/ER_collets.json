@@ -1,6 +1,5 @@
 [
     {
-        "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø8" },
@@ -24,7 +23,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø10" },
@@ -48,7 +46,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø12" },
@@ -72,7 +69,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø14" },
@@ -96,7 +92,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "ImageKey" : "ER_collet",
         "Data" : {
             "en" : { "Header" : "ER25 collet Ø16" },

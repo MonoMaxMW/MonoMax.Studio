@@ -1,0 +1,25 @@
+﻿<Window x:Class="MonoMax.Studio.Views.GenerateNodedataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonoMax.Studio.Views"
+             mc:Ignorable="d" 
+        Title="Node data generator"
+             d:DesignHeight="480" d:DesignWidth="640">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox IsReadOnly="True" Text="{Binding SelectedFile, Mode=OneWay}" />
+            <Button Margin="3" Content=" ... " Command="{Binding SelectFileCommand}" Grid.Column="1" />
+            <Button Margin="3" Content="Refresh" Command="{Binding RefreshDataCommand}" Grid.Column="2" />
+        </Grid>
+        <TextBox IsReadOnly="True" Text="{Binding GeneratedText, Mode=OneWay}"
+                 HorizontalScrollBarVisibility="Disabled"
+                 VerticalScrollBarVisibility="Auto"/>
+    </DockPanel>
+</Window>

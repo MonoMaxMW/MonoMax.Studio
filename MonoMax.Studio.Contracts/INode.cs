@@ -25,7 +25,7 @@ namespace MonoMax.Studio.Contracts
         string ImageKey { get; set; }
         List<string> Tags { get; }
         int TreeDepth { get; }
-        Dictionary<string, string> Ids { get; set; }
+        Dictionary<string, string> Ids { get; }
         Dictionary<string, DataEntry> Data { get; set; }
         List<AttributeEntry> Attributes { get; set; }
         IReadOnlyList<INode> ChildNodes { get; }
@@ -39,5 +39,6 @@ namespace MonoMax.Studio.Contracts
         void AddNode(INode node);
         void RemoveNode(INode node);
         void AddText(string languageKey, string text);
+        string GetCompareValue();
     }
 }

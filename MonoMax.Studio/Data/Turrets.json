@@ -1,6 +1,6 @@
 [
     {
-        "$type" : "Node",
+        "$type" : "SpindleConnection",
         "Key" : "Radial VDI30 turret",
         "ImageKey" : "turret_radial_vdi",
         "Tags" : [
@@ -32,7 +32,6 @@
         ]
     },
     {
-        "$type" : "Node",
         "Key" : "Axial VDI30 turret",
         "ImageKey" : "turret_axial_vdi",
         "Tags" : [
