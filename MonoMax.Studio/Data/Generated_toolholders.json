@@ -1,0 +1,291 @@
+﻿[
+    {
+        "Key": "Face and O.D. Turning holder - Universal",
+        "Ids": {
+          "emco": "R2Z415W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Face and O.D. Turning holder M4 - left",
+        "Ids": {
+          "emco": "R2Z410W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Face and O.D. Turning holder M3 - left",
+        "Ids": {
+          "emco": "R2Z420W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "RADIAL-TOOLHOLDER M4 RIGHT",
+        "Ids": {
+          "emco": "R2Z230"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "RADIAL-TOOLHOLDER M3 RIGHT",
+        "Ids": {
+          "emco": "R2Z240"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Double Face and O.D. Turning holder",
+        "Ids": {
+          "emco": "R2Z810W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Double facing and O.D. turning holder offset in Y axes",
+        "Ids": {
+          "emco": "442770W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Facing and I.D. Turning holder",
+        "Ids": {
+          "emco": "R2Z430"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "CUT-OFF HOLDER M3 - M4",
+        "Ids": {
+          "emco": "R2Z452W"
+        },
+        "Tags": [
+          "SH26",
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "I.D. Turning holder universal",
+        "Ids": {
+          "emco": "R2Z310W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "I.D. Turning holder universal - long",
+        "Ids": {
+          "emco": "R2Z315W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "I.D. Turning holder left",
+        "Ids": {
+          "emco": "R2Z330W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "I.D. Turning holder right",
+        "Ids": {
+          "emco": "R2Z350W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "Double I.D. Turning holder",
+        "Ids": {
+          "emco": "R2Z320W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "Multiple I.D. Turning holder offset in Y",
+        "Ids": {
+          "emco": "442760W"
+        },
+        "Tags": [
+          "Toolholder"
+        ]
+      },
+      {
+        "Key": "Collet adapter ER25",
+        "Ids": {
+          "emco": "R6Z360W"
+        },
+        "Tags": [
+          "Accessory",
+          "Collet",
+          "ER25"
+        ]
+      },
+      {
+        "Key": "Reduction bushing ø8mm",
+        "Ids": {
+          "emco": "442520W"
+        },
+        "Tags": [
+          "Accessory",
+          "Bushing"
+        ]
+      },
+      {
+        "Key": "Reduction bushing ø10mm",
+        "Ids": {
+          "emco": "442530W"
+        },
+        "Tags": [
+          "Accessory",
+          "Bushing"
+        ]
+      },
+      {
+        "Key": "Reduction bushing ø12mm",
+        "Ids": {
+          "emco": "442540W"
+        },
+        "Tags": [
+          "Accessory",
+          "Bushing"
+        ]
+      },
+      {
+        "Key": "Reduction bushing ø16mm",
+        "Ids": {
+          "emco": "442550W"
+        },
+        "Tags": [
+          "Accessory",
+          "Bushing"
+        ]
+      },
+      {
+        "Key": "Reduction bushing ø20mm",
+        "Ids": {
+          "emco": "442560W"
+        },
+        "Tags": [
+          "Accessory",
+          "Bushing"
+        ]
+      },
+      {
+        "Key": "Floating reamer holder",
+        "Ids": {
+          "emco": "R1Z410"
+        },
+        "Tags": [
+          "Accessory",
+          "Collet",
+          "ER16"
+        ]
+      },
+      {
+        "Key": "Barstop",
+        "Ids": {
+          "emco": "R6Z890"
+        },
+        "Tags": [
+          "Accessory",
+          "Barload"
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, straight",
+        "Ids": {
+          "emco": "R2Z471W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, straight",
+        "Ids": {
+          "emco": "R2Z491W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, right angle, left",
+        "Ids": {
+          "emco": "R2Z461W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, right angle, right",
+        "Ids": {
+          "emco": "R2Z461W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, both sides",
+        "Ids": {
+          "emco": "R2Z401W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ]
+      }
+]

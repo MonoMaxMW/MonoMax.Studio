@@ -3,6 +3,8 @@ using MonoMax.Studio.Contracts;
 using MonoMax.Studio.Contracts.Rules;
 using MonoMax.Studio.Internal;
 using Newtonsoft.Json;
+using OfficeOpenXml;
+using OfficeOpenXml.Table;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -139,18 +141,22 @@ namespace MonoMax.Studio.ViewModels
 
         private IReadOnlyDictionary<string, string> GetComponentDetails()
         {
-            var xlFile = Path.Combine(new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName, "Data", "Component_data.xlsx");
+            var xlFile = "_itemsdata.xlsx";
+            var xlFilePath = Path.Combine(
+                new FileInfo(Assembly.GetEntryAssembly().Location).Directory.FullName, 
+                "Data", 
+                xlFile);
 
-            if (!File.Exists(xlFile))
+            if (!File.Exists(xlFilePath))
                 return null;
 
 
             var dict = new Dictionary<string, string>();
 
-            using (var pck = new OfficeOpenXml.ExcelPackage(new FileInfo(xlFile)))
+            using (var pck = new ExcelPackage(new FileInfo(xlFilePath)))
             {
-                var ws = default(OfficeOpenXml.ExcelWorksheet);
-                var tbl = default(OfficeOpenXml.Table.ExcelTable);
+                var ws = default(ExcelWorksheet);
+                var tbl = default(ExcelTable);
 
                 for (int i = 1; i <= pck.Workbook.Worksheets.Count; i++)
                 {
@@ -159,27 +165,22 @@ namespace MonoMax.Studio.ViewModels
 
                     var start = tbl.Address.Start;
                     var end = tbl.Address.End;
-                    var column_id = start.Column;
-                    var column_header = column_id + 1;
-                    var column_description = column_id + 2;
 
+                    var vendor = string.Empty;
                     var id = string.Empty;
-                    var header = string.Empty;
                     var description = string.Empty;
 
                     for (int r = start.Row + 1; r <= end.Row; r++)
                     {
-                        id = header = description = string.Empty;
+                        id = description = vendor = string.Empty;
 
-                        if(ws.Cells[r,column_id].Value != null)
+                        if(ws.Cells[r, 1].Value != null)
                         {
+                            vendor = ws.Cells[r, 1].GetValue<string>();
+                            id = ws.Cells[r, 2].GetValue<string>();
+                            description = ws.Cells[r, 3].GetValue<string>();
 
-
-                            id = ws.Cells[r, column_id].GetValue<string>();
-                            header = ws.Cells[r, column_header].GetValue<string>();
-                            description = ws.Cells[r, column_description].GetValue<string>();
-
-                            var key = ws.Name + "_" + id;
+                            var key = vendor + "_" + id;
 
                             if (!dict.ContainsKey(key))
                                 dict.Add(key, description);
