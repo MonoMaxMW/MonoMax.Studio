@@ -104,7 +104,32 @@ namespace MonoMax.Studio.ViewModels
                         Items.Filter = x => !_selectedTags.Except((x as INode).Tags).Any();
 
                     Items.Refresh();
-                }); 
+                });
+
+            FindAvailabeNodeCommand = new RelayCommand<INode>(
+                (clickedNode) =>
+                {
+                    var nodes = AppManager.Global.Root
+                    .Flatten()
+                    .Where(x => x.Header != "Root")
+                    .ToList();
+
+                    if (nodes == null || nodes.Count == 0)
+                        return;
+
+                    foreach (var n in nodes)
+                    {
+                        if(n.Validate(n, clickedNode))
+                        {
+                            var clone = (INode)clickedNode.Clone();
+                            n.AddNode(clone);
+                            AppManager.Global.NotificationManager.AddNotification($"'{clone.Header}' was added!");
+                            break;
+                        }
+                    }
+
+                    ;
+                });
 
         }
 
@@ -115,7 +140,7 @@ namespace MonoMax.Studio.ViewModels
 
         public ICommand LeftDoubleClickCommand { get; }
         public ICommand MouseLeftDownCommand { get; }
-
+        public ICommand FindAvailabeNodeCommand { get; }
 
         internal void Deactivate()
         {

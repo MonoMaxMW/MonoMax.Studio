@@ -32,7 +32,6 @@ namespace MonoMax.Studio.Contracts
     [Serializable]
     public class Node : INode, INotifyPropertyChanged, IDropTarget
     {
-
         public static Type[] KnownTypes = new[]
         {
             typeof(Node),
@@ -240,7 +239,8 @@ namespace MonoMax.Studio.Contracts
             n.Parent = this;
 
             _nodes.Add(n);
-            Nodes.Refresh(); 
+            Nodes.Refresh();
+            IsExpanded = true;
             n = null;
         }
 
@@ -268,7 +268,6 @@ namespace MonoMax.Studio.Contracts
         {
             var clone = (dropInfo.Data as INode).Clone() as INode;
             this.AddNode(clone);
-            this.IsExpanded = true;
 
         }        
 

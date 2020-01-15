@@ -41,14 +41,14 @@ namespace MonoMax.Studio.ViewModels
     [Export(typeof(IShell))]
     public class ShellViewModel : PropertyChangedBase, IShell
     {
-        private Node _root = new Node() { Key = "Root", IsExpanded = true, ImageKey = "root.svg" };
         private NodePageViewModel _activeNodePage;
         private Node _selectedNode;
 
         public ShellViewModel()
         {
-            Root = new[] { _root };
-            _root.Init();
+            NotificationManager = AppManager.Global.NotificationManager;
+            Root = new[] { AppManager.Global.Root };
+            Root.First().Init();
 
             NodePagesViewModels = GetNodePages();
             ActiveNodePage = NodePagesViewModels.First();
@@ -148,6 +148,7 @@ namespace MonoMax.Studio.ViewModels
             };
         }
 
+        public NotificationManager NotificationManager { get; }
         public ICommand DeleteNodeCommand { get; }
 
         private NodePageViewModel[] GetNodePages()

@@ -80,8 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppManager.cs" />
     <Compile Include="Internal\CommandContainer.cs" />
     <Compile Include="Internal\RelayCommand.cs" />
+    <Compile Include="NotificationManager.cs" />
     <Compile Include="Reports\ReportGenerator.cs" />
     <Compile Include="ViewModels\IShell.cs" />
     <Compile Include="ViewModels\GenerateNodedataViewModel.cs" />
