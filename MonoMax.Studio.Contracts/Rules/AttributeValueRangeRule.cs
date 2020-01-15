@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MonoMax.Studio.Contracts.Rules
 {
     [Serializable]
-    public class RangeRule : Rule
+    public class AttributeValueRangeRule : Rule
     {
         public string ExpectedKey { get; set; }
         public double MinValue { get; set; }

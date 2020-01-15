@@ -57,7 +57,6 @@ namespace MonoMax.Studio.Reports
                 var headerColIdx = wb.Names["ItemHeader"].Start.Column;
                 var noteColIdx = wb.Names["ItemNote"].Start.Column;
                 var r = startRow;
-                var margin = 2;
 
                 foreach (var item in nodes)
                 {
@@ -65,7 +64,6 @@ namespace MonoMax.Studio.Reports
                     
                     ws.Cells[r, headerColIdx].Value = $"{indentStr} {item.Header}";
                     ws.InsertRow(r + 1, 1, startRow);
-
                     ws.Row(r).Height = rowHeight;
 
                     if(item.Ids != null && item.Ids.Count > 0)
@@ -85,7 +83,7 @@ namespace MonoMax.Studio.Reports
 
                     if (!string.IsNullOrEmpty(item.ImageKey))
                     {
-                        var imgSz = 64;
+                        var imgSz = 128;
                         var imgFile = AssetRepository.GetImagePath(item.ImageKey, imgSz);
 
                         if (File.Exists(imgFile))
@@ -107,26 +105,41 @@ namespace MonoMax.Studio.Reports
 
                 ws = wb.Worksheets[2];
                 var qutColumnIdx = wb.Names["SumItemQuantity"].Start.Column;
+                var vendorColumnIdx = wb.Names["SumItemVendor"].Start.Column;
+                var itemIdColumnIdx = wb.Names["SumItemId"].Start.Column;
+
                 startCol = wb.Names["SumItemRow_template"].Start.Column;
                 startRow = wb.Names["SumItemRow_template"].Start.Row;
                 imgColIdx = wb.Names["SumItemIcon"].Start.Column;
                 rowHeight = ws.Row(startRow).Height;
                 headerColIdx = wb.Names["SumItemHeader"].Start.Column;
-                noteColIdx = wb.Names["SumItemVendor"].Start.Column;
                 r = startRow;
 
-                foreach (var item in distinctNodes)
+                foreach (var dNode in distinctNodes)
                 {
-                    ws.Cells[r, headerColIdx].Value = item.Header;
+                    ws.Cells[r, headerColIdx].Value = dNode.Header;
                     ws.InsertRow(r + 1, 1, startRow);
                     ws.Row(r).Height = rowHeight;
 
-                    ws.Cells[r, qutColumnIdx].Value = nodes.Count(x => x.GetCompareValue() == item.GetCompareValue());
-
-                    if (!string.IsNullOrEmpty(item.ImageKey))
+                    ws.Cells[r, qutColumnIdx].Value = nodes.Count(x => x.GetCompareValue() == dNode.GetCompareValue());
+                    
+                    if(dNode.Ids != null && dNode.Ids.Count > 0)
                     {
-                        var imgSz = 64;
-                        var imgFile = AssetRepository.GetImagePath(item.ImageKey, imgSz);
+                        var idData = default(KeyValuePair<string, string>);
+                        if (dNode.Ids.ContainsKey(preferredVendor))
+                            idData = dNode.Ids.First(x => x.Key == preferredVendor);
+                        else
+                            idData = dNode.Ids.First();
+
+                        ws.Cells[r, vendorColumnIdx].Value = idData.Key;
+                        ws.Cells[r, itemIdColumnIdx].Value = idData.Value;
+                    }
+
+
+                    if (!string.IsNullOrEmpty(dNode.ImageKey))
+                    {
+                        var imgSz = 128;
+                        var imgFile = AssetRepository.GetImagePath(dNode.ImageKey, imgSz);
 
                         if (File.Exists(imgFile))
                         {

@@ -169,9 +169,8 @@ namespace MonoMax.Studio.ViewModels
                     "Turrets.json" }),
 
                 new NodePageViewModel("Toolholders", new[]{ 
-                    "Turningtoolholders.json",
-                    "Live_toolholders.json",
-                    "Generated_toolholders.json"
+                    "VDI25_toolholders.json",
+                    "Live_toolholders.json"
                 }, icon: toolholdersIcon),
 
                 new NodePageViewModel("Cuttingtools", new[]{ 

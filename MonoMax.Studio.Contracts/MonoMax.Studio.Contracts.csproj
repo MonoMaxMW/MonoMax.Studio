@@ -76,10 +76,11 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="Rules\AttributeValueRule.cs" />
     <Compile Include="Rules\ChildNodesQuantityRule.cs" />
     <Compile Include="Rules\MaxItemRule.cs" />
     <Compile Include="Rules\QuantityRule.cs" />
-    <Compile Include="Rules\RangeRule.cs" />
+    <Compile Include="Rules\AttributeValueRangeRule.cs" />
     <Compile Include="Rules\RequiredTagsRule.cs" />
     <Compile Include="Rules\Rule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
