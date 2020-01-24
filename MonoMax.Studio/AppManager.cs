@@ -19,7 +19,7 @@ namespace MonoMax.Studio
 
         public AppManager()
         {
-            Root = new Node() { Key = "Root", IsExpanded = true };
+            Root = new Node() { Key = "Root", ImageKey = "root", IsExpanded = true };
             NotificationManager = new NotificationManager();
         }
 

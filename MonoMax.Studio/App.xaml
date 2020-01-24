@@ -7,12 +7,24 @@
 
             <Color x:Key="page_background_color">#ff0088aa</Color>
             <Color x:Key="page_selected_background_color">#ff0066aa</Color>
-            
+
+            <Color x:Key="ThemeMainColor">#374850</Color>
+            <Color x:Key="ThemeSubColor">#253239</Color>
+            <Color x:Key="TextSubColor">#788F9A</Color>
+            <Color x:Key="HoverColor">#485e6e</Color>
+            <Color x:Key="ActiveHighlightColor">#42A5F5</Color>
+
             <Color x:Key="accent_color_1">#ff002856</Color>
             <Color x:Key="accent_color_2">#ffe2001a</Color>
             <Color x:Key="hover_color1">#ff0088aa</Color>
             <Color x:Key="hover_color2">#ff4d4d4d</Color>
 
+            <SolidColorBrush x:Key="ThemeMainColorBrush" Color="{StaticResource ThemeMainColor}" />
+            <SolidColorBrush x:Key="ThemeSubColorBrush" Color="{StaticResource ThemeSubColor}" />
+            <SolidColorBrush x:Key="ActiveHighlightColorBrush" Color="{StaticResource ActiveHighlightColor}" />
+            <SolidColorBrush x:Key="TextSubColorBrush" Color="{StaticResource TextSubColor}" />
+            <SolidColorBrush x:Key="HoverColorBrush" Color="{StaticResource HoverColor}" />
+            
             <SolidColorBrush x:Key="accent_colorbrush_1" Color="{StaticResource accent_color_1}" />
             <SolidColorBrush x:Key="accent_colorbrush_2" Color="{StaticResource accent_color_2}" />
             <SolidColorBrush x:Key="hover_colorbrush_1" Color="{StaticResource hover_color1}" />

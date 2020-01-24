@@ -3,19 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MonoMax.Studio.Views"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:dd="urn:gong-wpf-dragdrop"
-        xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
-        xmlns:ext="clr-namespace:MonoMax.Studio.Internal"
         mc:Ignorable="d"
         TextElement.FontFamily="Open Sans"
         TextElement.FontSize="14"
         TextElement.Foreground="DimGray"
         UseLayoutRounding="True"
         RenderOptions.BitmapScalingMode="HighQuality"
-        Title="MonoMax.Studio" Height="768" Width="1024">
+        Title="MonoMax.Studio" Height="768" Width="1024"
+        Background="White">
     <Window.Resources>
         <Style x:Key="TreeViewItemFocusVisual">
             <Setter Property="Control.Template">
@@ -179,23 +177,16 @@
                         <ColumnDefinition Width="1" />
                         <ColumnDefinition Width="0.6*" />
                     </Grid.ColumnDefinitions>
-                    <DockPanel Grid.Column="0">
-                        <ItemsControl DockPanel.Dock="Left"
-                          Background="#FF272727" MinWidth="64"
-                          ItemsSource="{Binding NodePagesViewModels}">
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <ItemsControl ItemsSource="{Binding NodePagesViewModels}"
+                                      MinWidth="150" Background="{StaticResource ThemeMainColorBrush}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border x:Name="bd">
-                                        <Image RenderOptions.EdgeMode="Aliased" Stretch="None"
-                                   RenderOptions.BitmapScalingMode="HighQuality" Margin="3" 
-                                   Height="64" Width="64" Source="{Binding Icon}" />
-                                        <Border.ToolTip>
-                                            <ToolTip Background="{StaticResource hover_colorbrush_2}" BorderThickness="0">
-                                                <DockPanel>
-                                                    <TextBlock Text="{Binding Header}" Foreground="White" DockPanel.Dock="Top" />
-                                                </DockPanel>
-                                            </ToolTip>
-                                        </Border.ToolTip>
+                                    <DockPanel>
                                         <i:Interaction.Triggers>
                                             <i:EventTrigger EventName="MouseLeftButtonDown">
                                                 <cal:ActionMessage MethodName="ActivateNodePage">
@@ -203,28 +194,59 @@
                                                 </cal:ActionMessage>
                                             </i:EventTrigger>
                                         </i:Interaction.Triggers>
-                                        <Border.Style>
-                                            <Style>
-                                                <Setter Property="Border.Background" Value="WhiteSmoke" />
+                                        <DockPanel.Style>
+                                            <Style TargetType="DockPanel">
                                                 <Style.Triggers>
-                                                    <Trigger Property="Border.IsMouseOver" Value="True">
-                                                        <Setter Property="Border.Background" Value="{StaticResource pageBgr_colorbrush}" />
+                                                    <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource ThemeSubColorBrush}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsActive}" Value="False">
+                                                        <Setter Property="Background" Value="Transparent" />
+                                                    </DataTrigger>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="{StaticResource HoverColorBrush}" />
                                                     </Trigger>
                                                 </Style.Triggers>
                                             </Style>
-                                        </Border.Style>
-
-                                    </Border>
+                                        </DockPanel.Style>
+                                        <Border x:Name="bd" Width="5">
+                                            <Border.Style>
+                                                <Style>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                                            <Setter Property="Border.Background" Value="{StaticResource ActiveHighlightColorBrush}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                        </Border>
+                                        <DockPanel>
+                                            <TextBlock Text="{Binding Header}" HorizontalAlignment="Center" 
+                                                   Foreground="{StaticResource TextSubColorBrush}" DockPanel.Dock="Bottom"
+                                                   FontWeight="DemiBold"/>
+                                            <Border Grid.Row="1">
+                                                <Image Stretch="None" Margin="3" Source="{Binding Icon}" />
+                                            </Border>
+                                        </DockPanel>
+                                    </DockPanel>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <ContentControl x:Name="ActiveNodePage" />
-                    </DockPanel>
-                    <DockPanel Grid.Column="2">
+                        <ContentControl x:Name="ActiveNodePage" Grid.Column="1" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Width="2" Background="DimGray" />
                         <TreeView x:Name="treeview"
-                      ItemsSource="{Binding Root}"
-                      HorizontalContentAlignment="Stretch"
-                      Tag="{Binding}">
+                                  Grid.Column="1"
+                                  BorderThickness="0"
+                                  ItemsSource="{Binding Root}"
+                                  HorizontalContentAlignment="Stretch"
+                                  Tag="{Binding}"
+                                  Background="{x:Null}">
                             <TreeView.InputBindings>
                                 <KeyBinding Key="Delete" Command="{Binding DeleteNodeCommand}" />
                             </TreeView.InputBindings>
@@ -287,7 +309,7 @@
                             </TreeView.ItemTemplate>
 
                         </TreeView>
-                    </DockPanel>
+                    </Grid>
                 </Grid>
             </DockPanel>
         </Grid>

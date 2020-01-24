@@ -9,7 +9,8 @@
              x:Name="uc"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="180"
-             d:DataContext="{d:DesignInstance Type={x:Type mock:NodePageViewModel}, IsDesignTimeCreatable=True}">
+             d:DataContext="{d:DesignInstance Type={x:Type mock:NodePageViewModel}, IsDesignTimeCreatable=True}"
+             Background="#EDF4F7">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </UserControl.Resources>
@@ -20,7 +21,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                      VerticalScrollBarVisibility="Auto">
+                      VerticalScrollBarVisibility="Auto"
+                      BorderThickness="0">
             <ItemsControl ItemsSource="{Binding AvailableTags}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -107,7 +109,19 @@
             </ItemsControl>
         </ScrollViewer>
         <ListBox ItemsSource="{Binding Items}" Grid.Row="2" 
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 BorderThickness="0"
+                 Background="{x:Null}"
+                 AlternationCount="2">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="#e4ecf2" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <ContentControl dd:DragDrop.IsDragSource="True"

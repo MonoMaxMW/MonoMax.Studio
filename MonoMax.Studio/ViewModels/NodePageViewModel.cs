@@ -32,7 +32,7 @@ namespace MonoMax.Studio.ViewModels
 
         public string Header { get; }
         public string[] Filenames { get; }
-        public string DefaultPictureFile { get; }
+        public bool IsActive { get; private set; }
 
         [Obsolete]
         public NodePageViewModel()
@@ -67,11 +67,10 @@ namespace MonoMax.Studio.ViewModels
         }
 
 
-        public NodePageViewModel(string header, string[] files, string defaultPictureFile = "", ImageSource icon = null)
+        public NodePageViewModel(string header, string[] files, ImageSource icon = null)
         {
             Header = header;
             Filenames = files;
-            DefaultPictureFile = defaultPictureFile;
             Icon = icon;
 
 
@@ -145,7 +144,8 @@ namespace MonoMax.Studio.ViewModels
         internal void Deactivate()
         {
             Items = null;
-
+            IsActive = false;
+            NotifyOfPropertyChange(() => IsActive);
         }
 
         internal void Activate()
@@ -162,6 +162,8 @@ namespace MonoMax.Studio.ViewModels
             AvailableTags.SortDescriptions.Add(new SortDescription());
             SelectedTags.SortDescriptions.Add(new SortDescription());
 
+            IsActive = true;
+            NotifyOfPropertyChange(() => IsActive);
         }
 
         private IReadOnlyDictionary<string, string> GetComponentDetails()
@@ -247,9 +249,6 @@ namespace MonoMax.Studio.ViewModels
                     };
 
                     var items = JsonConvert.DeserializeObject<List<Node>>(File.ReadAllText(file), jsonSettings);
-
-                    if (!string.IsNullOrEmpty(DefaultPictureFile))
-                        items.ForEach(x => x.ImageKey = DefaultPictureFile);
 
                     if (_componentDetails != null)
                     {
