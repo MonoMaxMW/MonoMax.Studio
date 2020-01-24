@@ -79,6 +79,7 @@
     <Compile Include="Rules\AttributeValueRule.cs" />
     <Compile Include="Rules\ChildNodesQuantityRule.cs" />
     <Compile Include="Rules\MaxItemRule.cs" />
+    <Compile Include="Rules\MaxItemTypeRule.cs" />
     <Compile Include="Rules\QuantityRule.cs" />
     <Compile Include="Rules\AttributeValueRangeRule.cs" />
     <Compile Include="Rules\RequiredTagsRule.cs" />

@@ -153,36 +153,40 @@ namespace MonoMax.Studio.ViewModels
 
         private NodePageViewModel[] GetNodePages()
         {
-            var toolingIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/tooling_icon_64.png"));
-            var toolholdersIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/toolholders_icon_64.png"));
-            var colletIcon = new BitmapImage(new Uri("pack://application:,,,/Assets/collet_icon_64.png"));
+            var iconAccessories = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_accessories_64.png"));
+            var iconFixtures = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_fixtures_64.png"));
+            var iconTooling = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_tooling_64.png"));
+            var iconToolholders = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_toolholders_64.png"));
+            var iconComponents = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_components_64.png"));
 
             return new[]
             {
                 //new NodePageViewModel("Groups", "Groups.json", "package.svg"),
-                new NodePageViewModel("Emcoturn 45", new[]{ "Emcoturn45.json" }),
-                new NodePageViewModel("Fixtures", new[]{ 
+                //new NodePageViewModel("Emcoturn 45", new[]{ "Emcoturn45.json" }),
+                new NodePageViewModel("FIXTURES", new[]{ 
                     "Spindles.json",
                     "Fixtures.json",
-                    
-                }),
-                new NodePageViewModel("Turrets", new[]{
-                    "Turrets.json" }),
+                }, icon: iconFixtures),
 
-                new NodePageViewModel("Toolholders", new[]{ 
-                    "VDI25_toolholders.json",
-                    "Live_toolholders.json"
-                }, icon: toolholdersIcon),
+                new NodePageViewModel("COMPONENTS", new[]{
+                    "Channels.json" 
+                }, icon: iconComponents),
 
-                new NodePageViewModel("Cuttingtools", new[]{ 
-                    "Shanktools_16x16.json", 
-                    "Endmills.json",
-                    "Soliddrills.json"
+                new NodePageViewModel("TOOLHOLDERS", new[]{ 
+                    "Toolholders_VDI25.json",
+                    "Toolholders_Driven.json"
+                }, icon: iconToolholders),
+
+                new NodePageViewModel("TOOLS", new[]{ 
+                    "Tools_Turning.json", 
+                    "Tools_Milling.json",
+                    "Tools_Drilling.json"
                 }, 
-                icon: toolingIcon),
-                new NodePageViewModel("Collets", new[]{ 
-                    "ER_collets.json" 
-                }, icon: colletIcon),
+                icon: iconTooling),
+
+                new NodePageViewModel("ACCESSORIES", new[]{ 
+                    "Accessory.json" 
+                }, icon: iconAccessories),
 
             };
         }

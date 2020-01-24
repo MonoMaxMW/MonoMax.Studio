@@ -101,7 +101,7 @@ namespace MonoMax.Studio.ViewModels
                     if (_selectedTags.Count == 0)
                         Items.Filter = null;
                     else
-                        Items.Filter = x => !_selectedTags.Except((x as INode).Tags).Any();
+                        Items.Filter = x => (x as INode).Tags != null && !_selectedTags.Except((x as INode).Tags).Any();
 
                     Items.Refresh();
                 });

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:MonoMax.Studio.Internal">
     <Application.Resources>
         <ResourceDictionary>
+
+            <Color x:Key="page_background_color">#ff0088aa</Color>
+            <Color x:Key="page_selected_background_color">#ff0066aa</Color>
+            
             <Color x:Key="accent_color_1">#ff002856</Color>
             <Color x:Key="accent_color_2">#ffe2001a</Color>
             <Color x:Key="hover_color1">#ff0088aa</Color>
@@ -13,6 +17,10 @@
             <SolidColorBrush x:Key="accent_colorbrush_2" Color="{StaticResource accent_color_2}" />
             <SolidColorBrush x:Key="hover_colorbrush_1" Color="{StaticResource hover_color1}" />
             <SolidColorBrush x:Key="hover_colorbrush_2" Color="{StaticResource hover_color2}" />
+
+            <SolidColorBrush x:Key="pageBgr_colorbrush" Color="{StaticResource page_background_color}" />
+            <SolidColorBrush x:Key="page_highlight_Bgr_colorbrush" Color="{StaticResource page_selected_background_color}" />
+
 
             <BitmapImage x:Key="Missing_img_32" UriSource="Assets/missing_img_32.png" />
             <BitmapImage x:Key="Missing_img_64" UriSource="Assets/missing_img_64.png" />

@@ -168,9 +168,6 @@
     <Resource Include="Assets\missing_img_64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\tooling_icon_64.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\toolholders_icon_64.png" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +175,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\collet_icon_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon_tooling_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon_toolholders_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon_fixtures_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon_accessories_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icon_components_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

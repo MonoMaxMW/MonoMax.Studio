@@ -10,8 +10,9 @@
         xmlns:svg="http://sharpvectors.codeplex.com/svgc/"
         xmlns:ext="clr-namespace:MonoMax.Studio.Internal"
         mc:Ignorable="d"
-        TextElement.FontFamily="Segoe UI"
+        TextElement.FontFamily="Open Sans"
         TextElement.FontSize="14"
+        TextElement.Foreground="DimGray"
         UseLayoutRounding="True"
         RenderOptions.BitmapScalingMode="HighQuality"
         Title="MonoMax.Studio" Height="768" Width="1024">
@@ -36,6 +37,10 @@
         <SolidColorBrush x:Key="TreeViewItem.TreeArrow.Static.Fill" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="TreeViewItem.TreeArrow.Static.Stroke" Color="#FF818181"/>
 
+        <Style TargetType="{x:Type ToolTip}">
+            <Setter Property="TextElement.FontFamily" Value="Open Sans" />
+        </Style>
+        
         <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
             <Setter Property="Focusable" Value="False"/>
             <Setter Property="Width" Value="16"/>
@@ -163,11 +168,11 @@
         </Grid>
         <Grid>
             <DockPanel>
-                <Menu DockPanel.Dock="Top">
+                <!--<Menu DockPanel.Dock="Top">
                     <Menu.Items>
                         <MenuItem Header="Generate data" Command="{Binding OpenNodedataGeneratorCommand}" />
                     </Menu.Items>
-                </Menu>
+                </Menu>-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.4*" />
@@ -200,10 +205,10 @@
                                         </i:Interaction.Triggers>
                                         <Border.Style>
                                             <Style>
-                                                <Setter Property="Border.Background" Value="{StaticResource accent_colorbrush_1}" />
+                                                <Setter Property="Border.Background" Value="{StaticResource page_highlight_Bgr_colorbrush}" />
                                                 <Style.Triggers>
                                                     <Trigger Property="Border.IsMouseOver" Value="True">
-                                                        <Setter Property="Border.Background" Value="{StaticResource hover_colorbrush_1}" />
+                                                        <Setter Property="Border.Background" Value="{StaticResource pageBgr_colorbrush}" />
                                                     </Trigger>
                                                 </Style.Triggers>
                                             </Style>
