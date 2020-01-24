@@ -25,6 +25,8 @@ namespace MonoMax.Studio.Contracts
         string ImageKey { get; set; }
         List<string> Tags { get; }
         int TreeDepth { get; }
+        int ReportOrder { get; }
+
         Dictionary<string, string> Ids { get; }
         Dictionary<string, DataEntry> Data { get; set; }
         List<AttributeEntry> Attributes { get; set; }
@@ -33,6 +35,8 @@ namespace MonoMax.Studio.Contracts
         INode Parent { get; }
         int NodesCount { get; }
         bool IsInitialized { get; }
+
+        void UpdateReportOrder();
         void Init();
         void Refresh(int treeDepth = 0);
         bool Validate(params object[] arguments);

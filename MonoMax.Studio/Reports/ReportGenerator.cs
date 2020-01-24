@@ -101,7 +101,14 @@ namespace MonoMax.Studio.Reports
                 }
                 ws.DeleteRow(r);
 
-                var distinctNodes = nodes.Distinct(new NodeEqualityComparer());
+                var distinctNodes = nodes
+                    .Distinct(new NodeEqualityComparer())
+                    .ToList();
+
+                distinctNodes.ForEach(x => x.UpdateReportOrder());
+                distinctNodes = distinctNodes
+                    .OrderBy(x => x.ReportOrder)
+                    .ToList();
 
                 ws = wb.Worksheets[2];
                 var qutColumnIdx = wb.Names["SumItemQuantity"].Start.Column;

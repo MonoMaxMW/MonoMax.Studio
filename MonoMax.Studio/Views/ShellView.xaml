@@ -205,7 +205,7 @@
                                         </i:Interaction.Triggers>
                                         <Border.Style>
                                             <Style>
-                                                <Setter Property="Border.Background" Value="{StaticResource page_highlight_Bgr_colorbrush}" />
+                                                <Setter Property="Border.Background" Value="WhiteSmoke" />
                                                 <Style.Triggers>
                                                     <Trigger Property="Border.IsMouseOver" Value="True">
                                                         <Setter Property="Border.Background" Value="{StaticResource pageBgr_colorbrush}" />

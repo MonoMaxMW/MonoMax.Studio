@@ -173,8 +173,7 @@ namespace MonoMax.Studio.ViewModels
                 }, icon: iconComponents),
 
                 new NodePageViewModel("TOOLHOLDERS", new[]{ 
-                    "Toolholders_VDI25.json",
-                    "Toolholders_Driven.json"
+                    "Toolholders_VDI25.json"
                 }, icon: iconToolholders),
 
                 new NodePageViewModel("TOOLS", new[]{ 

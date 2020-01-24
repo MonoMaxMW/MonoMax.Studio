@@ -76,12 +76,28 @@ namespace MonoMax.Studio.Contracts
         public int NodesCount => _nodes.Count;
         public bool HasImageSet => Images != null && Images.Count == 4;
         public int TreeDepth { get; private set; }
+        public int ReportOrder { get; private set; } = 99;
+
+        public void UpdateReportOrder()
+        {
+            if(Tags != null)
+            {
+                if (Tags.Contains("Channel") || Tags.Contains("Turret"))
+                    ReportOrder = 1;
+                else if (Tags.Contains("Fixture") || Tags.Contains("Workholding"))
+                    ReportOrder = 2;
+                else if (Tags.Contains("Toolholder"))
+                    ReportOrder = 3;
+                else if (Tags.Contains("Tool") || Tags.Contains("Cuttingtool"))
+                    ReportOrder = 4;
+            }
+        }
 
         public void Refresh(int treeDepth = 0)
         {
             TreeDepth = treeDepth;
 
-            if(ChildNodes != null)
+            if (ChildNodes != null)
             {
                 foreach (var child in ChildNodes)
                 {
