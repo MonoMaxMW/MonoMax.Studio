@@ -161,16 +161,14 @@ namespace MonoMax.Studio.ViewModels
 
             return new[]
             {
-                //new NodePageViewModel("Groups", "Groups.json", "package.svg"),
-                //new NodePageViewModel("Emcoturn 45", new[]{ "Emcoturn45.json" }),
+                new NodePageViewModel("COMPONENTS", new[]{
+                    "Channels.json"
+                }, icon: iconComponents),
+
                 new NodePageViewModel("FIXTURES", new[]{ 
                     "Spindles.json",
                     "Fixtures.json",
                 }, icon: iconFixtures),
-
-                new NodePageViewModel("COMPONENTS", new[]{
-                    "Channels.json" 
-                }, icon: iconComponents),
 
                 new NodePageViewModel("TOOLHOLDERS", new[]{ 
                     "Toolholders_VDI25.json"
