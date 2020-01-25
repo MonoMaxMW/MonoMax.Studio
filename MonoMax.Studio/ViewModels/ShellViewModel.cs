@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
@@ -149,7 +150,20 @@ namespace MonoMax.Studio.ViewModels
         }
 
         public NotificationManager NotificationManager { get; }
+        public ICommand AddSuggestedItemCommand { get; }
         public ICommand DeleteNodeCommand { get; }
+        internal ItemRepository ItemRepository { get; } = new ItemRepository();
+        public ObservableCollection<INode> InsertableNodes { get; } = new ObservableCollection<INode>();
+
+        public void AddSuggestNode(INode otherNode)
+        {
+            var clone = otherNode.Clone() as INode;
+
+            if(SelectedNode.Validate(SelectedNode, clone))
+                SelectedNode.AddNode(clone);
+
+            CheckCanSuggestItems();
+        }
 
         private NodePageViewModel[] GetNodePages()
         {
@@ -159,32 +173,37 @@ namespace MonoMax.Studio.ViewModels
             var iconToolholders = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_toolholders_64.png"));
             var iconComponents = new BitmapImage(new Uri("pack://application:,,,/Assets/icon_components_64.png"));
 
+            var channels = ItemRepository.DeserializeNodes(new[] { 
+                "Channels.json" }
+            );
+
+            var fixtures = ItemRepository.DeserializeNodes(new[] {
+                "Spindles.json",
+                "Fixtures.json"
+            });
+
+            var toolholders = ItemRepository.DeserializeNodes(new[] {
+                "Toolholders_VDI25.json"
+            });
+
+            var tools = ItemRepository.DeserializeNodes(new[] {
+                "Tools_Turning.json",
+                "Tools_Milling.json",
+                "Tools_Drilling.json"
+            });
+
+            var accessories = ItemRepository.DeserializeNodes(new[] {
+                "Accessory.json"
+            });
+
+
             return new[]
             {
-                new NodePageViewModel("COMPONENTS", new[]{
-                    "Channels.json"
-                }, icon: iconComponents),
-
-                new NodePageViewModel("FIXTURES", new[]{ 
-                    "Spindles.json",
-                    "Fixtures.json",
-                }, icon: iconFixtures),
-
-                new NodePageViewModel("TOOLHOLDERS", new[]{ 
-                    "Toolholders_VDI25.json"
-                }, icon: iconToolholders),
-
-                new NodePageViewModel("TOOLS", new[]{ 
-                    "Tools_Turning.json", 
-                    "Tools_Milling.json",
-                    "Tools_Drilling.json"
-                }, 
-                icon: iconTooling),
-
-                new NodePageViewModel("ACCESSORIES", new[]{ 
-                    "Accessory.json" 
-                }, icon: iconAccessories),
-
+                new NodePageViewModel("COMPONENTS", channels, iconComponents),
+                new NodePageViewModel("FIXTURES", fixtures, iconFixtures),
+                new NodePageViewModel("TOOLHOLDERS", toolholders, iconToolholders),
+                new NodePageViewModel("TOOLS", tools, iconTooling),
+                new NodePageViewModel("ACCESSORIES", accessories, iconAccessories),
             };
         }
 
@@ -207,6 +226,24 @@ namespace MonoMax.Studio.ViewModels
         {
             _selectedNode = args.NewValue as Node;
             NotifyOfPropertyChange(() => SelectedNode);
+            NotifyOfPropertyChange(() => SuggestionPopupIsOpen);
+        }
+
+        public bool SuggestionPopupIsOpen => CheckCanSuggestItems();
+
+        private bool CheckCanSuggestItems()
+        {
+            var status = SelectedNode != null && SelectedNode.Header != "Root";
+            var foundItems = ItemRepository.FindPossibleChildren(SelectedNode);
+            InsertableNodes.Clear();
+
+            if(foundItems.Count > 0)
+            {
+                for (int i = 0; i < foundItems.Count; i++)
+                    InsertableNodes.Add(foundItems[i]);
+            }
+
+            return status && foundItems.Count > 0;
         }
 
         public Node SelectedNode => _selectedNode;

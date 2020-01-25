@@ -87,6 +87,7 @@
     <Compile Include="Reports\ReportGenerator.cs" />
     <Compile Include="ViewModels\IShell.cs" />
     <Compile Include="ViewModels\GenerateNodedataViewModel.cs" />
+    <Compile Include="ViewModels\ItemRepository.cs" />
     <Compile Include="ViewModels\NodePageViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">

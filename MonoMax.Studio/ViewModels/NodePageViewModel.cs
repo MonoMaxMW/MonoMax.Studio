@@ -67,10 +67,10 @@ namespace MonoMax.Studio.ViewModels
         }
 
 
-        public NodePageViewModel(string header, string[] files, ImageSource icon = null)
+        public NodePageViewModel(string header, IReadOnlyList<INode> items, ImageSource icon = null)
         {
             Header = header;
-            Filenames = files;
+            _items = items;
             Icon = icon;
 
 
@@ -151,7 +151,6 @@ namespace MonoMax.Studio.ViewModels
         internal void Activate()
         {
             _componentDetails = GetComponentDetails();
-            _items = DeserializeNodes();
             _availableTags = new List<string>(GetAvailableNodes(_items));
             _selectedTags = new List<string>();
 
@@ -224,60 +223,6 @@ namespace MonoMax.Studio.ViewModels
 
 
             return dict;
-        }
-
-        private List<INode> DeserializeNodes()
-        {
-            var allItems = new List<INode>();
-
-            for (int i = 0; i < Filenames.Length; i++)
-            {
-                var file = AssetRepository.GetFullAssetpath(Filenames[i]);
-
-                if (File.Exists(file))
-                {
-                    var jsonSettings = new JsonSerializerSettings()
-                    {
-                        TypeNameHandling = TypeNameHandling.Auto,
-                        SerializationBinder = new KnownTypesBinder()
-                        {
-                            KnownTypes = new List<Type>()
-                                .Concat(Rule.KnownTypes)
-                                .Concat(Node.KnownTypes)
-                                .ToList()
-                        }
-                    };
-
-                    var items = JsonConvert.DeserializeObject<List<Node>>(File.ReadAllText(file), jsonSettings);
-
-                    if (_componentDetails != null)
-                    {
-                        foreach (var item in items)
-                        {
-                            item.Init();
-                            if (item.Ids != null)
-                            {
-                                foreach (var id in item.Ids)
-                                {
-                                    var tmp = $"{id.Key}_{id.Value}";
-                                    if (_componentDetails.ContainsKey(tmp))
-                                    {
-                                        item.AddText("en", _componentDetails[tmp]);
-                                    }
-
-                                }
-
-
-                            }
-                        } 
-                    }
-
-                    items.ForEach(x => x.Init());
-                    allItems.AddRange(items);
-                } 
-            }
-           
-            return allItems;
         }
 
         private IReadOnlyList<string> GetAvailableNodes(IReadOnlyList<INode> items)

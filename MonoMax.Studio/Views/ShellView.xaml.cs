@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonoMax.Studio.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,24 @@ namespace MonoMax.Studio.Views
             InitializeComponent();
         }
 
-        private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void treeview_Selected(object sender, RoutedEventArgs e)
+        {
+            var tvi = e.OriginalSource as TreeViewItem;
+
+            if(tvi != null && (treeview.SelectedItem as Node)?.Header != "Root")
+            {
+                var pos = tvi.TranslatePoint(new Point(), PositionCanvas);
+
+                Canvas.SetLeft(SuggestionPopup, pos.X + 19 + 100);
+                Canvas.SetTop(SuggestionPopup, pos.Y + 36);
+
+
+            }
+
+            e.Handled = true;
+        }
+
+        private void treeview_Unselected(object sender, RoutedEventArgs e)
         {
 
         }
