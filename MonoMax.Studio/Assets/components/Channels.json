@@ -1,0 +1,220 @@
+[
+    {
+        "Key" : "Radial VDI25 turret",
+        "ImageKey" : "vdi_turret_radial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI25",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI25"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            },
+            {
+                "$type" : "IllegalTagsRule",
+                "Tags" : [
+                    "DIN5482"
+                ]
+            }
+        ]
+    },
+    {
+        "Key" : "Radial VDI30 turret",
+        "ImageKey" : "vdi_turret_radial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI30",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI30"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            },
+            {
+                "$type" : "IllegalTagsRule",
+                "Tags" : [
+                    "DIN5482"
+                ]
+            }
+        ]
+    },
+    {
+        "Key" : "Radial VDI40 turret",
+        "ImageKey" : "vdi_turret_radial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI40",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI40"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            },
+            {
+                "$type" : "IllegalTagsRule",
+                "Tags" : [
+                    "DIN5482"
+                ]
+            }
+        ]
+    },
+    {
+        "Key" : "Axial VDI25 turret",
+        "ImageKey" : "vdi_turret_axial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI25",
+            "Axial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI25"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            }
+        ]
+    },
+    {
+        "Key" : "Axial VDI30 turret",
+        "ImageKey" : "vdi_turret_axial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI30",
+            "Axial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI30"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            }
+        ]
+    },
+    {
+        "Key" : "Axial VDI40 turret",
+        "ImageKey" : "vdi_turret_axial",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "VDI40",
+            "Axial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "VDI40"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            }
+        ]
+    },
+    {
+        "Key" : "Axial BM45 turret",
+        "ImageKey" : "turret_bmt",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "BMT45",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "BMT45"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            }
+        ]
+    },
+    {
+        "Key" : "Axial BM55 turret",
+        "ImageKey" : "turret_bmt",
+        "Tags" : [
+            "Turret",
+            "Channel",
+            "BMT55",
+            "Radial",
+            "Live tooling",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Toolholder",
+                    "BMT55"
+                ]
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 12
+            }
+        ]
+    }
+]

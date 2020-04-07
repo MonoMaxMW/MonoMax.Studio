@@ -47,8 +47,8 @@ namespace MonoMax.Studio.ViewModels
 
         public ShellViewModel()
         {
-            NotificationManager = AppManager.Global.NotificationManager;
-            Root = new[] { AppManager.Global.Root };
+            NotificationManager = AppManager.Instance.NotificationManager;
+            Root = new[] { AppManager.Instance.Root };
             Root.First().Init();
 
             NodePagesViewModels = GetNodePages();
@@ -159,9 +159,12 @@ namespace MonoMax.Studio.ViewModels
         {
             var clone = otherNode.Clone() as INode;
 
-            if(SelectedNode.Validate(SelectedNode, clone))
+            if (SelectedNode.Validate(SelectedNode, clone))
+            {
                 SelectedNode.AddNode(clone);
+                AppManager.Instance.NotificationManager.AddNotification($"'{clone.Header}' was added!");
 
+            }
             CheckCanSuggestItems();
         }
 

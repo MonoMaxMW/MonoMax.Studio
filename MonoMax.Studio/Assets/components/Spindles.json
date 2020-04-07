@@ -1,0 +1,29 @@
+﻿[
+    {
+        "$type" : "Node",
+        "Key" : "Turningspindle 45",
+        "ImageKey" : "turningspindle",
+        "Tags" : [
+            "Spindle",
+            "Turningspindle",
+            "Machine component"
+        ],
+        "Rules" : [
+            {
+                "$type" : "RequiredTagsRule",
+                "Tags" : [
+                    "Fixture"
+                ]
+            },
+            {
+                "$type" : "AttributeValueRule",
+                "ExpectedKey" : "ConnectionISO",
+                "ExpectedValue" : "ISO702-A05"
+            },
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            }
+        ]
+    }
+]

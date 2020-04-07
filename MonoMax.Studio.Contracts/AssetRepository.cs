@@ -12,10 +12,12 @@ namespace MonoMax.Studio.Contracts
     {
         static AssetRepository()
         {
+            var fi = new FileInfo(typeof(AssetRepository).Assembly.Location);
+
             AssetDirectory = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                "OneDrive - EMCO Corporation",
-                "Shared_assets");
+                fi.DirectoryName,
+                "Assets",
+                "components");
         }
 
         public static string AssetDirectory { get; }

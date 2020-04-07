@@ -251,18 +251,31 @@
                                             <TextBlock Text="SUGGESTIONS" Foreground="White" Margin="3,3,50,3" />
                                         </Expander.Header>
                                         <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                                  MaxHeight="180" Background="#99443D3D">
+                                                  MaxHeight="180" Background="{StaticResource ThemeMainColorBrush}">
                                             <ItemsControl ItemsSource="{Binding InsertableNodes}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
                                                         <Grid>
+                                                            <Grid.Style>
+                                                                <Style>
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Grid.IsMouseOver" Value="True">
+                                                                            <Setter Property="Grid.Background" Value="{StaticResource HoverColorBrush}" />
+                                                                        </Trigger>
+                                                                        <Trigger Property="Grid.IsMouseOver" Value="False">
+                                                                            <Setter Property="Grid.Background" Value="Transparent" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Grid.Style>
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="Auto" />
                                                                 <ColumnDefinition Width="Auto" />
                                                                 <ColumnDefinition Width="1*" />
                                                             </Grid.ColumnDefinitions>
 
-                                                            <Border Height="24" Width="24">
+                                                            <Border Height="24" Width="24"
+                                                                    Margin="5,0,0,0">
                                                                 <i:Interaction.Triggers>
                                                                     <i:EventTrigger EventName="MouseLeftButtonDown">
                                                                         <cal:ActionMessage MethodName="AddSuggestNode">
@@ -277,6 +290,9 @@
                                                                             <Trigger Property="Border.IsMouseOver" Value="True">
                                                                                 <Setter Property="Border.Background" Value="Red" />
                                                                             </Trigger>
+                                                                            <Trigger Property="Border.IsMouseOver" Value="False">
+                                                                                <Setter Property="Border.Background" Value="{StaticResource ThemeSubColorBrush}" />
+                                                                            </Trigger>
                                                                         </Style.Triggers>
                                                                     </Style>
                                                                 </Border.Style>
@@ -290,8 +306,8 @@
                                                                 </TextBlock>
                                                             </Border>
 
-                                                            <Image Grid.Column="1" Margin="3,0,0,0" Height="32" Width="32" Source="{Binding Images[32]}" />
-                                                            <TextBlock Grid.Column="2" Margin="3,0,0,0" Text="{Binding Header}" VerticalAlignment="Center" Foreground="White" />
+                                                            <Image Grid.Column="1" Margin="5,0,0,0" Height="32" Width="32" Source="{Binding Images[32]}" />
+                                                            <TextBlock Grid.Column="2" Margin="5,0,0,0" Text="{Binding Header}" VerticalAlignment="Center" Foreground="White" />
                                                         </Grid>
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>

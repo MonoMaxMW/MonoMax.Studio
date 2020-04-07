@@ -108,7 +108,7 @@ namespace MonoMax.Studio.ViewModels
             FindAvailabeNodeCommand = new RelayCommand<INode>(
                 (clickedNode) =>
                 {
-                    var nodes = AppManager.Global.Root
+                    var nodes = AppManager.Instance.Root
                     .Flatten()
                     .Where(x => x.Header != "Root")
                     .ToList();
@@ -122,7 +122,7 @@ namespace MonoMax.Studio.ViewModels
                         {
                             var clone = (INode)clickedNode.Clone();
                             n.AddNode(clone);
-                            AppManager.Global.NotificationManager.AddNotification($"'{clone.Header}' was added!");
+                            AppManager.Instance.NotificationManager.AddNotification($"'{clone.Header}' was added!");
                             break;
                         }
                     }

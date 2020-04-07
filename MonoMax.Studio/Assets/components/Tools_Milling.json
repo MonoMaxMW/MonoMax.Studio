@@ -1,0 +1,80 @@
+[
+    {
+        "ImageKey" : "endmill",
+        "Key" : "Endmill Ø6",
+        "Tags" : [
+            "Tool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 6,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "ImageKey" : "endmill",
+        "Key" : "Endmill Ø8",
+        "Tags" : [
+            "Tool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 8,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "ImageKey" : "endmill",
+        "Key" : "Endmill Ø10",
+        "Tags" : [
+            "Tool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 10,
+                "Unit" : "mm"
+            }
+        ]
+        
+    },
+    {
+        "ImageKey" : "endmill",
+        "Key" : "Endmill Ø12",
+        "Tags" : [
+            "Tool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 12,
+                "Unit" : "mm"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "endmill",
+        "Key" : "Endmill Ø16",
+        "Tags" : [
+            "Tool",
+            "Endmill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 16,
+                "Unit" : "mm"
+            }
+        ]
+    }
+]

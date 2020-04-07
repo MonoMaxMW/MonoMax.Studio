@@ -1,0 +1,135 @@
+﻿[
+    {
+        "$type" : "Node",
+        "Key" : "Drill Ø6",
+        "ImageKey" : "soliddrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 6,
+                "Unit" : "mm"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Drill Ø6.5",
+        "ImageKey" : "soliddrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 6.5,
+                "Unit" : "mm"
+            }
+        ]
+    },
+    {
+        "$type" : "Node",
+        "Key" : "Drill Ø6.8",
+        "ImageKey" : "soliddrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 8,
+                "Unit" : "mm"
+            }
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Thread tap M6x1",
+        "ImageKey" : "tapdrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 6,
+                "Unit" : "mm"
+            }
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Thread tap M8x1.25",
+        "ImageKey" : "tapdrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 8,
+                "Unit" : "mm"
+            }
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Thread tap M10x1.5",
+        "ImageKey" : "tapdrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 10,
+                "Unit" : "mm"
+            }
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Thread tap M12x1.75",
+        "ImageKey" : "tapdrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 12,
+                "Unit" : "mm"
+            }
+        ]
+    },
+
+    {
+        "$type" : "Node",
+        "Key" : "Thread tap M16x2",
+        "ImageKey" : "tapdrill",
+        "Tags" : [
+            "Tool",
+            "Drill"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionDiameter",
+                "Value" : 16,
+                "Unit" : "mm"
+            }
+        ]
+    }
+]

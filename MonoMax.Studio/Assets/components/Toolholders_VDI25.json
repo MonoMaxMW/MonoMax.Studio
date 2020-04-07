@@ -1,0 +1,483 @@
+﻿[
+    {
+        "Key": "Face and O.D. Turning holder - Universal",
+        "ImageKey": "vdi_od_shank_universal",
+        "Ids": {
+          "emco": "R2Z415W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "Face and O.D. Turning holder M4 - left",
+        "ImageKey" : "vdi_shank_left",
+        "Ids": {
+          "emco": "R2Z410W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "Face and O.D. Turning holder M3 - left",
+        "ImageKey" : "vdi_shank_left_flipped",
+        "Ids": {
+          "emco": "R2Z420W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "RADIAL-TOOLHOLDER M4 RIGHT",
+        "ImageKey" : "vdi_shank_right",
+        "Ids": {
+          "emco": "R2Z230"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "RADIAL-TOOLHOLDER M3 RIGHT",
+        "ImageKey" : "vdi_shank_right_flipped",
+        "Ids": {
+          "emco": "R2Z240"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "Double Face and O.D. Turning holder",
+        "ImageKey": "vdi_od_shank_x2",
+        "Ids": {
+          "emco": "R2Z810W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Key": "Double facing and O.D. turning holder offset in Y axes",
+        "ImageKey" : "vdi_od_shank_x4",
+        "Ids": {
+          "emco": "442770W"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "16x16"
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 4
+          }
+        ]
+      },
+      {
+        "Key": "Facing & I.D. Turning holder",
+        "ImageKey" : "vdi_face_id_shank",
+        "Ids": {
+          "emco": "R2Z430"
+        },
+        "Tags": [
+          "16x16",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "RequiredTagsRule",
+            "Tags":[
+              "16x16"
+            ]
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "Cutoff holder, double serration, SH26",
+        "ImageKey" : "vdi_cutoff",
+        "Ids": {
+          "emco": "R2Z452W"
+        },
+        "Tags": [
+          "SH26",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules":[
+          {
+            "$type": "RequiredTagsRule",
+            "Tags":[
+              "SH26"
+            ]
+          },
+          {
+            "$type": "MaxItemRule",
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "Key": "I.D. Turning holder universal",
+        "ImageKey" : "vdi_id_holder_universal",
+        "Ids": {
+          "emco": "R2Z310W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+      ]
+      },
+      {
+        "Key": "I.D. Turning holder universal - long",
+        "ImageKey" : "vdi_id_holder_universal",
+        "Ids": {
+          "emco": "R2Z315W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+      ]
+      },
+      {
+        "Key": "I.D. Turning holder left",
+        "ImageKey" : "vdi_id_holder_left",
+        "Ids": {
+          "emco": "R2Z330W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+      ]
+      },
+      {
+        "Key": "I.D. Turning holder right",
+        "ImageKey" : "vdi_id_holder_right",
+        "Ids": {
+          "emco": "R2Z350W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+      ]
+      },
+      {
+        "Key": "Double I.D. Turning holder",
+        "ImageKey" : "vdi_id_holder_x2",
+        "Ids": {
+          "emco": "R2Z320W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 2
+          }
+      ]
+      },
+      {
+        "Key": "Multiple I.D. Turning holder offset in Y",
+        "ImageKey" : "vdi_id_holder_x4",
+        "Ids": {
+          "emco": "442760W"
+        },
+        "Tags": [
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+              "$type" : "AttributeValueRule",
+              "ExpectedValue" : 25.0,
+              "ExpectedKey" : "ConnectionDiameter"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 4
+          }
+      ]
+      },
+      {
+        "Key": "Barstop",
+        "Ids": {
+          "emco": "R6Z890"
+        },
+        "Tags": [
+          "Accessory",
+          "Barload"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, straight",
+        "ImageKey" : "vdi_livetoolholder_straight",
+        "Ids": {
+          "emco": "R2Z471W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+            "$type" : "RequiredTagsRule",
+            "Tags" : [
+              "Collet",
+              "ER25"
+            ]
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, straight",
+        "ImageKey" : "vdi_livetoolholder_straight",
+        "Ids": {
+          "emco": "R2Z491W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+            "$type" : "RequiredTagsRule",
+            "Tags" : [
+              "Collet",
+              "ER25"
+            ]
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, right angle, left",
+        "ImageKey" : "vdi_livetoolholder_angled_left",
+        "Ids": {
+          "emco": "R2Z461W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+            "$type" : "RequiredTagsRule",
+            "Tags" : [
+              "Collet",
+              "ER25"
+            ]
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, right angle, right",
+        "ImageKey" : "vdi_livetoolholder_angled_right",
+        "Ids": {
+          "emco": "R2Z461W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+            "$type" : "RequiredTagsRule",
+            "Tags" : [
+              "Collet",
+              "ER25"
+            ]
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+        ]
+      },
+      {
+        "Key": "Drill/Mill unit, both sides",
+        "ImageKey" : "vdi_livetoolholder_angled_double",
+        "Ids": {
+          "emco": "R2Z401W"
+        },
+        "Tags": [
+          "ER25",
+          "Toolholder",
+          "VDI25"
+        ],
+        "Rules" : [
+          {
+            "$type": "AttributeValueRule",
+            "ExpectedKey" : "Connection",
+            "ExpectedValue" : "ER25"
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 2
+          }
+        ]
+      }
+]

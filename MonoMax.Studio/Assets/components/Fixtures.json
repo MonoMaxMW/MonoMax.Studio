@@ -1,0 +1,39 @@
+[
+    {
+        "Key" : "TopPlus mini 42",
+        "ImageKey" : "hainbuch_topplus",
+        "Ids" : {
+            "Hainbuch" : "202921"
+        },
+        "Tags" : [
+            "Fixture",
+            "Deadend style",
+            "ISO702-5"
+        ]
+    },
+
+    {
+        "Key" : "TopPlus mini 52",
+        "ImageKey" : "hainbuch_topplus",
+        "Tags" : [
+            "Fixture",
+            "Deadend style"
+        ],
+        "Attributes" : [
+            {
+                "Key" : "ConnectionISO",
+                "Value" : "ISO702-A05"
+            }
+        ]
+    },
+
+    {
+        "Key" : "TopPlus mini 65",
+        "ImageKey" : "hainbuch_topplus",
+        "Tags" : [
+            "Fixture",
+            "Deadend style",
+            "ISO702-6"
+        ]
+    }
+]

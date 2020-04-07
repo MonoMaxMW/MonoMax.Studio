@@ -9,11 +9,11 @@ namespace MonoMax.Studio
 {
     public class AppManager
     {
-        public static AppManager Global { get; }
+        public static AppManager Instance { get; }
 
         static AppManager()
         {
-            Global = new AppManager();
+            Instance = new AppManager();
 
         }
 

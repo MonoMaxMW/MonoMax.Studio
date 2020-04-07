@@ -1,0 +1,33 @@
+[
+    {
+         "ImageKey" : "vdi_livetool_straight",
+         "Data" : {
+             "en" : {
+                 "Header" : "Mill / drill unit, straight, DIN5480"
+             },
+             "de" : {
+                 "Header" : "Bohr / Fräshalter, gerade"
+             }
+         },
+         "Tags" : [
+             "Toolholder",
+             "Livetool",
+             "VDI30",
+             "Collet",
+             "DIN5480"
+         ],
+         "Rules" : [
+             {
+                 "$type" : "MaxItemRule",
+                 "Value" : 1
+             },
+             {
+                 "$type" : "RequiredTagsRule",
+                 "Tags" : [
+                     "ER25",
+                     "Collet"
+                 ]
+             }
+         ]
+    }
+]

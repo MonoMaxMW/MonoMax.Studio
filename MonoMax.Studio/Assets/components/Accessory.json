@@ -1,0 +1,481 @@
+[
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø8" },
+            "de" : { "Header" : "ER25 Spannzange Ø8" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25",
+            "Accessory"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER25"
+          }
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 7,
+                "MaxValue" : 8,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø10" },
+            "de" : { "Header" : "ER25 Spannzange Ø10" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25",
+            "Accessory"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER25"
+          }
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 9,
+                "MaxValue" : 10,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø12" },
+            "de" : { "Header" : "ER25 Spannzange Ø12" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25",
+            "Accessory"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER25"
+          }
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 11,
+                "MaxValue" : 12,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø14" },
+            "de" : { "Header" : "ER25 Spannzange Ø14" }
+        },
+        "Tags" : [
+            "Collet",
+            "ER25",
+            "Accessory"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER25"
+          }
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 13,
+                "MaxValue" : 14,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER25 collet Ø16" },
+            "de" : { "Header" : "ER25 Spannzange Ø16" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER25"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER25",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 15,
+                "MaxValue" : 16,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø6" },
+            "de" : { "Header" : "ER32 Spannzange Ø6" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 5,
+                "MaxValue" : 6,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø8" },
+            "de" : { "Header" : "ER32 Spannzange Ø8" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 7,
+                "MaxValue" : 8,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø10" },
+            "de" : { "Header" : "ER32 Spannzange Ø10" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 9,
+                "MaxValue" : 10,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø12" },
+            "de" : { "Header" : "ER32 Spannzange Ø12" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 11,
+                "MaxValue" : 12,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø14" },
+            "de" : { "Header" : "ER32 Spannzange Ø14" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 13,
+                "MaxValue" : 14,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+    {
+        "ImageKey" : "ER_collet",
+        "Data" : {
+            "en" : { "Header" : "ER32 collet Ø16" },
+            "de" : { "Header" : "ER32 Spannzange Ø16" }
+        },
+        "Attributes" : [
+          {
+            "Key" : "Connection",
+            "Value" : "ER32"
+          }
+        ],
+        "Tags" : [
+            "Collet",
+            "ER32",
+            "Accessory"
+
+        ],
+        "Rules" : [
+            {
+                "$type" : "MaxItemRule",
+                "Value" : 1
+            },
+            {
+                "$type" : "AttributeValueRangeRule",
+                "MinValue" : 15,
+                "MaxValue" : 16,
+                "ExpectedKey" : "ConnectionDiameter"
+            }
+        ]
+    },
+
+    {
+        "Key": "Reduction sleeve ø8mm",
+        "ImageKey": "sleeve",
+        "Ids": {
+          "emco": "442520W"
+        },
+        "Tags": [
+          "Accessory",
+          "Sleeve"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Reduction sleeve ø10mm",
+        "ImageKey": "sleeve",
+        "Ids": {
+          "emco": "442530W"
+        },
+        "Tags": [
+          "Accessory",
+          "Sleeve"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Reduction sleeve ø12mm",
+        "ImageKey": "sleeve",
+        "Ids": {
+          "emco": "442540W"
+        },
+        "Tags": [
+          "Accessory",
+          "Sleeve"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Reduction sleeve ø16mm",
+        "ImageKey": "sleeve",
+        "Ids": {
+          "emco": "442550W"
+        },
+        "Tags": [
+          "Accessory",
+          "Sleeve"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Reduction sleeve ø20mm",
+        "ImageKey": "sleeve",
+        "Ids": {
+          "emco": "442560W"
+        },
+        "Tags": [
+          "Accessory",
+          "Sleeve"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      },
+      {
+        "Key": "Collet adapter ER25",
+        "ImageKey" : "collet_sleeve",
+        "Ids": {
+          "emco": "R6Z360W"
+        },
+        "Tags": [
+          "Accessory",
+          "Collet",
+          "ER25"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ],
+        "Rules" :[
+          {
+            "$type" : "RequiredTagsRule",
+            "Tags" :[
+              "ER25",
+              "Collet"
+            ]
+          },
+          {
+            "$type" : "MaxItemRule",
+            "Value" : 1
+          }
+        ]
+      },
+      {
+        "Key": "Floating reamer holder",
+        "ImageKey" : "floating_reamer_holder",
+        "Ids": {
+          "emco": "R1Z410"
+        },
+        "Tags": [
+          "Accessory",
+          "Collet",
+          "ER16"
+        ],
+        "Attributes" : [
+          {
+            "Key" : "ConnectionDiameter",
+            "Value" : 25,
+            "Unit" : "mm"
+          }
+        ]
+      }
+]
